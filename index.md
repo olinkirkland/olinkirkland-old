@@ -1,3 +1,7 @@
+---
+title: About
+---
+
 ### About Me
 
 I'm a German-American software developer and I made this website to share my work. My projects are mainly developed in Adobe Air, and my current personal project, Realms, is no different. I'm very interested in procedural design and simulation of natural and social systems.
