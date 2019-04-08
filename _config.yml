@@ -1,25 +1,7 @@
 theme: jekyll-theme-slate
 
-# Name of website
-title: My website
+# Name
+title: Olin Kirkland 
 
-# Short description of your site
-description: A virtual proof that name is awesome!
-
-# --- Navigation bar options --- #
-
-# List of links in the navigation bar
-navbar-links:
-  About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
-    - Learn markdown: "http://www.markdowntutorial.com/"
-    - GitHub Pages: "https://pages.github.com/"
-  Author's home: "http://deanattali.com"
-
-social-network-links:
-  rss: true
-  email: "someone@example.com"
-  facebook: daattali
-  github: daattali
-  twitter: daattali
+# Short description
+description: Programming apps and games in Regensburg, Germany
