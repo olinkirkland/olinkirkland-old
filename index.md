@@ -1,37 +1,21 @@
-## Welcome to GitHub Pages
+### About Me
 
-You can use the [editor on GitHub](https://github.com/olinkirkland/olinkirkland.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+I'm a German-American software developer and I made this website to share my work. My projects are mainly developed in Adobe Air, and my current personal project, Realms, is no different. I'm very interested in procedural design and simulation of natural and social systems.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+As a programmer at both the Museum of Natural Science in Houston and as a freelancer I've taken on leadership roles in software projects and worked closely with researchers, graphic designers, and animators on tight schedules.
 
-### Markdown
+I've freelanced in Edinburgh and Berlin, worked as teacher in Washington D.C., and built learning applications as the lead programmer for an exhibit design company in Houston. Since then, I've moved to Regensburg to program security software at Dallmeier Electronic GmbH & Co. KG.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Game Development
 
-```markdown
-Syntax highlighted code block
+I've always had a passion for playing and designing games and that drove me early on to pursue programming as a hobby. Game Jams are always a big draw for me and I'm eager to get busy on whatever my latest personal project is.
 
-# Header 1
-## Header 2
-### Header 3
+### Interactive Work
 
-- Bulleted
-- List
+In 2015, I moved to Texas to join the team at Paul Bernhard Exhibits and was tasked with developing applications for the brand new Wiess Energy Hall in the Houston Museum of Natural Science. The 30,000 square foot exhibit space contains nearly seventy individual interactive exhibits, many of which run touchscreen driven content I created.
 
-1. Numbered
-2. List
+After finishing my work on the Wiess Energy Hall, I began doing side projects for the museum as a freelance developer. I designed and developed multiple applications within the Knights and Armor and Death by Natural Causes exhibitions.
 
-**Bold** and _Italic_ and `Code` text
+### Contact me
 
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/olinkirkland/olinkirkland.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+[plakat@live.com](mailto:plakat@live.com)
