@@ -1,4 +1,4 @@
-### Programmer living in Germany • Educational Application Design • Game Development • UI/UX 
+### Educational Application Design • Game Development • UI/UX 
 
 # Personal Projects
 - Realms (2019+): Single player procedural strategy game
@@ -18,4 +18,5 @@
 - Death by Natural Causes Exhibits (2018)
 - Wiess Energy Hall Exhibits (2017)
 
+### Contact
 [plakat@live.com](mailto:plakat@live.com)
