@@ -5,3 +5,7 @@ title: Olin Kirkland
 
 # Short description
 description: Programming apps and games in Regensburg, Germany
+
+# Options
+github:
+  is_project_page: false
