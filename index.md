@@ -1,21 +1,21 @@
 ### Programmer living in Germany • Educational Application Design • Game Development • UI/UX 
 
 # Personal Projects
-- Realms
- - Simulation
-- O.M.G.
-- Exodus
-- Entropy
+- Realms (2019+): Single player procedural strategy game
+- O.M.G. (2018): Online multiplayer arcade game platform
+- Maze (2017): Single player procedural maze game
+- Entropy (2015): Single player roguelike arcade game
+- Exodus (2014): Online multiplayer math-based planetary conquest game
 
 # Game Jam Projects
-- Altar
-- Heart Quest
-- Dark Mass
-- 
+- Altar (2016): Online multiplayer persistent platformer
+- Game Studio Studio (2014): Ironic single player clicker game
+- Heart Quest (2013): Single player persistent hack-and-slash game
+- Dark Mass (2012): Single player platformer
 
 # Museum Work
-- Wiess Energy Hall Exhibits
-- Knights and Armor Exhibits
-- Death by Natural Causes Exhibits
+- Knights and Armor Exhibits (2018)
+- Death by Natural Causes Exhibits (2018)
+- Wiess Energy Hall Exhibits (2017)
 
 [plakat@live.com](mailto:plakat@live.com)
