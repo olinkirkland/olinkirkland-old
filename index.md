@@ -1,4 +1,4 @@
-### Educational Application Design • Game Development • UI/UX 
+### Game Design • Application Development • UI/UX • Procedural Generation • Multiplayer Game Programming
 
 # Personal Projects
 - Realms (2019+): Single player procedural strategy game
