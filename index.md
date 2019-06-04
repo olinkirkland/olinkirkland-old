@@ -1,4 +1,4 @@
-### Game Design • Application Development • UI/UX • Procedural Generation • Multiplayer Game Programming
+Game Design • Application Development • UI/UX • Procedural Generation • Multiplayer Game Programming
 
 # Personal Projects
 - Realms (2019+): Single player procedural strategy game
@@ -18,5 +18,5 @@
 - Death by Natural Causes Exhibits (2018)
 - Wiess Energy Hall Exhibits (2017)
 
-### Contact
+# Contact
 [plakat@live.com](mailto:plakat@live.com) | [LinkedIn](https://de.linkedin.com/in/olin-kirkland-10483078) | [Stackoverflow](https://stackoverflow.com/users/1546303/olin-kirkland) | [Youtube](https://www.youtube.com/channel/UCQJs4jEQVMZvDo2bLqitW3A) | [Instagram](https://www.instagram.com/olinkirkland/?hl=en)
