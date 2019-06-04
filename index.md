@@ -19,4 +19,4 @@
 - Wiess Energy Hall Exhibits (2017)
 
 ### Contact
-[plakat@live.com](mailto:plakat@live.com)
+[plakat@live.com](mailto:plakat@live.com) | [LinkedIn](https://de.linkedin.com/in/olin-kirkland-10483078) | [Stackoverflow](https://stackoverflow.com/users/1546303/olin-kirkland) | [Youtube](https://www.youtube.com/channel/UCQJs4jEQVMZvDo2bLqitW3A) | [Instagram](https://www.instagram.com/olinkirkland/?hl=en)
