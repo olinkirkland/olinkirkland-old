@@ -9,7 +9,7 @@ Game Design • Application Development • UI/UX • Procedural Generation • 
 
 # Game Jam Projects
 - Altar (2016): Online multiplayer persistent platformer
-- Game Studio Studio (2014): Ironic single player clicker game
+- Game Studio Studio (2014): Satirical single player clicker game
 - Heart Quest (2013): Single player persistent hack-and-slash game
 - Dark Mass (2012): Single player platformer
 
