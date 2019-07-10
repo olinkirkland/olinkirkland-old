@@ -138,7 +138,7 @@
 					event.stopPropagation();
 					event.preventDefault();
 					
-				   fetch('https://www.olinkirk.land/resume.pdf')
+				   fetch('https://olinkirk.land/Resume.pdf')
 				  .then(resp => resp.blob())
 				  .then(blob => {
 					const url = window.URL.createObjectURL(blob);
