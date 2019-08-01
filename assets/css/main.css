@@ -1513,6 +1513,12 @@ form textarea {
     margin-bottom: 1.5em;
 }
 
+form input:invalid,
+form select:invalid,
+form textarea:invalid {
+    border-color: salmon;
+}
+
 form input:focus,
 form select:focus,
 form textarea:focus {
