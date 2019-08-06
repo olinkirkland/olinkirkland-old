@@ -206,6 +206,12 @@ p, ul, ol, dl, table {
     width: 1400px;
 }
 
+.project-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+}
+
 @media screen and (max-width: 1680px) {
 
     .container {
