@@ -210,11 +210,11 @@ p, ul, ol, dl, table {
     position: relative;
 }
 
-.project-container h3 {
+.project-container h1 {
     color: #ffffff;
 }
 
-.project-container h3 span {
+.project-container h1 span {
   padding:10px;
   background-color:rgba(0, 0, 0, 0.3);;
 }
