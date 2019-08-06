@@ -219,6 +219,7 @@ p, ul, ol, dl, table {
 
 .project-container h2 {
     color: #ffffff;
+	margin: 0 0 0 0;
 }
 
 .project-container h2 span {
