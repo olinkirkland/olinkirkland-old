@@ -136,6 +136,13 @@ a:hover {
     text-decoration: none;
 }
 
+a.anchor {
+    display: block;
+    position: relative;
+    top: -20px;
+    visibility: hidden;
+}
+
 h1, h2, h3, h4, h5, h6 {
     color: #444;
     font-weight: 800;
