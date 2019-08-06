@@ -210,7 +210,7 @@ p, ul, ol, dl, table {
     position: relative;
 }
 
-.project-container h1 {
+.project-container h3 {
     color: 0xffffff;
 }
 
