@@ -204,7 +204,11 @@ p, ul, ol, dl, table {
     margin: 0 auto;
     max-width: 100%;
     width: 1400px;
-	position: relative;
+}
+
+.project-container {
+    position: relative;
+    color: 0xffffff;
 }
 
 @media screen and (max-width: 1680px) {
