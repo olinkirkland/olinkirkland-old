@@ -214,6 +214,11 @@ p, ul, ol, dl, table {
     color: #ffffff;
 }
 
+.project-container h3 span {
+  padding:10px;
+  background-color:rgba(0, 0, 0, 0.3);;
+}
+
 @media screen and (max-width: 1680px) {
 
     .container {
