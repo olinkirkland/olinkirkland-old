@@ -206,12 +206,6 @@ p, ul, ol, dl, table {
     width: 1400px;
 }
 
-.project-container {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-}
-
 @media screen and (max-width: 1680px) {
 
     .container {
@@ -1631,6 +1625,13 @@ table thead {
 .image.centered img {
     margin: 0 auto;
     width: auto;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .centered-and-cropped { object-fit: cover }
