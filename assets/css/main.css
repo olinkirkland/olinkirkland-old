@@ -1601,10 +1601,6 @@ table thead {
     border-radius: 8px;
 }
 
-.image round {
-    border-radius: 50%;
-}
-
 .image.fit {
     display: block;
     width: 100%;
