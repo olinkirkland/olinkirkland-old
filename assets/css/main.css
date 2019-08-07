@@ -1674,7 +1674,7 @@ table thead {
 
 .bottom-right {
   position: absolute;
-  bottom: 8px;
+  bottom: 16px;
   right: 8px;
 }
 
