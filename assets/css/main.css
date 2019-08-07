@@ -1738,6 +1738,12 @@ button.alt,
     color: #444;
 }
 
+.button.badge {
+    background: #0090c5;
+    color: #ffffff;
+    padding: 0.2em 0.2em;
+}
+
 input[type="button"].alt:hover,
 input[type="submit"].alt:hover,
 input[type="reset"].alt:hover,
