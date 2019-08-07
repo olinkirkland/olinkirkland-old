@@ -1658,7 +1658,15 @@ table thead {
   transform: translate(-50%, -50%);
 }
 
-.centered-and-cropped { object-fit: cover }
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+}
+
+.centered-and-cropped {
+  object-fit: cover
+}
 
 /* Button */
 
