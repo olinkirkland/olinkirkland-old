@@ -223,11 +223,19 @@ p, ul, ol, dl, table {
 }
 
 .project-container h2 span {
-  padding-top: 10px;
+ 	 padding-top: 10px;
 	padding-left: 30px;
 	padding-bottom: 10px;
 	padding-right: 30px;
-  background-color:rgba(0, 0, 0, 0.6);
+        background-color:rgba(0, 0, 0, 0.6);
+}
+
+.project-container p span {
+  	padding-top: 5px;
+	padding-left: 15px;
+	padding-bottom: 5px;
+	padding-right: 15px;
+        background-color:rgba(0, 0, 0, 0.6);
 }
 
 @media screen and (max-width: 1680px) {
