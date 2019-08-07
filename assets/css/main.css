@@ -217,9 +217,14 @@ p, ul, ol, dl, table {
     position: relative;
 }
 
-.project-container h2, p {
+.project-container h2 {
     color: #ffffff;
-	margin: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+
+.project-container p {
+    color: #ffffff;
+    margin: 0 0 0 0;
 }
 
 .project-container h2 span {
