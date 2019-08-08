@@ -229,13 +229,12 @@ p, ul, ol, dl, table {
 }
 
 .project-container a {
-    font-weight: 300;
-    color: #000000;
-    text-decoration: underline;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.6);
 }
 
 .project-container a:hover {
-    color: #000000;
+    color: rgba(0, 0, 0, 1);
 }
 
 .project-container h2 span {
