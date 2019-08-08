@@ -231,11 +231,11 @@ p, ul, ol, dl, table {
 .project-container a {
     font-weight: 300;
     color: #000000;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .project-container a:hover {
-    color: #0090c5;
+    color: #000000;
 }
 
 .project-container h2 span {
