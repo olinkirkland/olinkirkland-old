@@ -231,6 +231,7 @@ p, ul, ol, dl, table {
 .project-container a {
     font-weight: 600;
     color: rgba(0, 0, 0, 0.6);
+    text-decoration: none;
 }
 
 .project-container a:hover {
