@@ -2013,9 +2013,7 @@ ul.menu li:first-child {
 }
 
 #logo h1 {
-    background: #0090c5;
-    color: #fff;
-    border-radius: 6px;
+    color: #0090c5;
     font-family: 'Leckerli One', cursive;
     font-weight: 400;
     padding: 0.25em 0.2em 0.25em 0.2em;
