@@ -1,3 +1,3 @@
-Sitemap: http://olinkirk.land/sitemap.xml
+Sitemap: https://olinkirk.land/sitemap.xml
 User-agent: *
 Disallow:
