@@ -29,8 +29,68 @@
 </image:image>
 </url>
 <url>
+<loc>https://olinkirk.land/exhibits/</loc>
+<lastmod>2020-11-18T12:28:33+01:00</lastmod>
+<image:image>
+<image:loc>https://olinkirk.land/media\posts\1/Energy-Career-Quiz-Screenshot-Title-Screen.jpg</image:loc>
+<image:title><![CDATA[The Energy Career Quiz application places users into one of a dozen energy-related careers after they take a short quiz of ten questions]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://olinkirk.land/media\posts\1/DkBcOyzU0AAnMGj.jpg</image:loc>
+<image:title><![CDATA[The Renewable Energy Kiosks consist of a set of eight interactive touch screen kiosks with content related to renewable energy production. In the middle of the Renewable Exhibit sits the Hub application, whirring with colorful particle effects and a beautiful gallery of images from the Land Art Generator Initiative]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://olinkirk.land/media\posts\1/Hydrocarbon-Information-Center-Screenshot-Liquids.jpg</image:loc>
+<image:title><![CDATA[The Hydrocarbon Information Center application consists of series of static maps generated from donated Wood Mackenzie data and was developed using custom global plotting code on top of a stylized vector map]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://olinkirk.land/media\posts\1/Energy-Map-Screenshot-Facilities-2.jpg</image:loc>
+<image:title><![CDATA[Developed in Flex, the GIS Energy Map is an informative two screen interactive map that lets users explore energy distribution on the North American continent]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://olinkirk.land/media\posts\1/Fracking-Simulator-Gameplay.jpg</image:loc>
+<image:title><![CDATA[The Can You Frack It interactive game describes the practice of fracturing the ground for natural gas – or “fracking” as it’s known in the industry]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://olinkirk.land/media\posts\1/Prospector-Slot-Machine-Gameplay-Screen.jpg</image:loc>
+<image:title><![CDATA[This slot machine game has a physical lever users can pull to try and win. Educational text panels educate visitors about the history of oil prospecting. An Arduino was used to forward sensor data to the application]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://olinkirk.land/media\posts\1/Traps-and-Plays-Interactive-Projection.jpg</image:loc>
+<image:title><![CDATA[This application displays 3D animated videos on a fabricated rock wall that simulate depth and real motion]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://olinkirk.land/media\posts\1/Geosteering-Simulator-Screenshot.jpg</image:loc>
+<image:title><![CDATA[This game shows a side-view representation of the practice of geosteering for oil exploration. I spent a lot of effort getting the animation around the drill just right to show dirt and rock particles being chipped away]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://olinkirk.land/media\posts\1/Tectonic-Plates.jpg</image:loc>
+<image:title><![CDATA[The Continental Drift application is a straightforward interactive that allows users to scrub through time and view how tectonic plates have shifted in the past and how they are predicted to shift in the future]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://olinkirk.land/media\posts\1/Unconventional-Energy-Overview.jpg</image:loc>
+<image:title><![CDATA[A set of nine interactive dual-screen touch screen kiosks with content related to unconventional energy production, two related to seismic surveys, and four related to oil and gas pipelines]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://olinkirk.land/media\posts\1/Castle-Map-Screenshot.jpg</image:loc>
+<image:title><![CDATA[I collaborated with the Houston Museum of Natural Science‘s Exhibit Architect Kevin Gold and Curator of Anthropology Dirk Van Tuerenhout to create an enormous map of European castles]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://olinkirk.land/media\posts\1/Medieval-Armor-Screenshot.jpg</image:loc>
+<image:title><![CDATA[The Digital Armor Encyclopedia is an application developed to educate visitors at the Houston Museum of Natural Science about types of medieval armor and the years during which those types were used]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://olinkirk.land/media\posts\1/Crest-Creator-Screenshot-Green.jpg</image:loc>
+<image:title><![CDATA[Using the Crest Creator, users make their own crest by picking from a wide selection of colors, materials, and decorative prints, then Email it to themselves]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://olinkirk.land/media\posts\1/Death-Calculator-Quiz-Screenshot-Yes.jpg</image:loc>
+<image:title><![CDATA[The Death Predictor Exhibit is an intuitive quiz application that allows users to view how their own life choices affect their lifespan]]></image:title>
+</image:image>
+</url>
+<url>
 <loc>https://olinkirk.land/games-and-apps/</loc>
-<lastmod>2020-10-26T10:17:49+01:00</lastmod>
+<lastmod>2020-11-18T12:27:55+01:00</lastmod>
 <image:image>
 <image:loc>https://olinkirk.land/media\posts\8/gallery/adl_2019-04-27_22-15-13-thumbnail.png</image:loc>
 <image:title><![CDATA[]]></image:title>
@@ -94,66 +154,6 @@
 <image:image>
 <image:loc>https://olinkirk.land/media\posts\8/level2_1-2.png</image:loc>
 <image:title><![CDATA[]]></image:title>
-</image:image>
-</url>
-<url>
-<loc>https://olinkirk.land/hello-world/</loc>
-<lastmod>2020-10-26T10:05:18+01:00</lastmod>
-<image:image>
-<image:loc>https://olinkirk.land/media\posts\1/Energy-Career-Quiz-Screenshot-Title-Screen.jpg</image:loc>
-<image:title><![CDATA[The Energy Career Quiz application places users into one of a dozen energy-related careers after they take a short quiz of ten questions]]></image:title>
-</image:image>
-<image:image>
-<image:loc>https://olinkirk.land/media\posts\1/DkBcOyzU0AAnMGj.jpg</image:loc>
-<image:title><![CDATA[The Renewable Energy Kiosks consist of a set of eight interactive touch screen kiosks with content related to renewable energy production. In the middle of the Renewable Exhibit sits the Hub application, whirring with colorful particle effects and a beautiful gallery of images from the Land Art Generator Initiative]]></image:title>
-</image:image>
-<image:image>
-<image:loc>https://olinkirk.land/media\posts\1/Hydrocarbon-Information-Center-Screenshot-Liquids.jpg</image:loc>
-<image:title><![CDATA[The Hydrocarbon Information Center application consists of series of static maps generated from donated Wood Mackenzie data and was developed using custom global plotting code on top of a stylized vector map]]></image:title>
-</image:image>
-<image:image>
-<image:loc>https://olinkirk.land/media\posts\1/Energy-Map-Screenshot-Facilities-2.jpg</image:loc>
-<image:title><![CDATA[Developed in Flex, the GIS Energy Map is an informative two screen interactive map that lets users explore energy distribution on the North American continent]]></image:title>
-</image:image>
-<image:image>
-<image:loc>https://olinkirk.land/media\posts\1/Fracking-Simulator-Gameplay.jpg</image:loc>
-<image:title><![CDATA[The Can You Frack It interactive game describes the practice of fracturing the ground for natural gas – or “fracking” as it’s known in the industry]]></image:title>
-</image:image>
-<image:image>
-<image:loc>https://olinkirk.land/media\posts\1/Prospector-Slot-Machine-Gameplay-Screen.jpg</image:loc>
-<image:title><![CDATA[This slot machine game has a physical lever users can pull to try and win. Educational text panels educate visitors about the history of oil prospecting. An Arduino was used to forward sensor data to the application]]></image:title>
-</image:image>
-<image:image>
-<image:loc>https://olinkirk.land/media\posts\1/Traps-and-Plays-Interactive-Projection.jpg</image:loc>
-<image:title><![CDATA[This application displays 3D animated videos on a fabricated rock wall that simulate depth and real motion]]></image:title>
-</image:image>
-<image:image>
-<image:loc>https://olinkirk.land/media\posts\1/Geosteering-Simulator-Screenshot.jpg</image:loc>
-<image:title><![CDATA[This game shows a side-view representation of the practice of geosteering for oil exploration. I spent a lot of effort getting the animation around the drill just right to show dirt and rock particles being chipped away]]></image:title>
-</image:image>
-<image:image>
-<image:loc>https://olinkirk.land/media\posts\1/Tectonic-Plates.jpg</image:loc>
-<image:title><![CDATA[The Continental Drift application is a straightforward interactive that allows users to scrub through time and view how tectonic plates have shifted in the past and how they are predicted to shift in the future]]></image:title>
-</image:image>
-<image:image>
-<image:loc>https://olinkirk.land/media\posts\1/Unconventional-Energy-Overview.jpg</image:loc>
-<image:title><![CDATA[A set of nine interactive dual-screen touch screen kiosks with content related to unconventional energy production, two related to seismic surveys, and four related to oil and gas pipelines]]></image:title>
-</image:image>
-<image:image>
-<image:loc>https://olinkirk.land/media\posts\1/Castle-Map-Screenshot.jpg</image:loc>
-<image:title><![CDATA[I collaborated with the Houston Museum of Natural Science‘s Exhibit Architect Kevin Gold and Curator of Anthropology Dirk Van Tuerenhout to create an enormous map of European castles]]></image:title>
-</image:image>
-<image:image>
-<image:loc>https://olinkirk.land/media\posts\1/Medieval-Armor-Screenshot.jpg</image:loc>
-<image:title><![CDATA[The Digital Armor Encyclopedia is an application developed to educate visitors at the Houston Museum of Natural Science about types of medieval armor and the years during which those types were used]]></image:title>
-</image:image>
-<image:image>
-<image:loc>https://olinkirk.land/media\posts\1/Crest-Creator-Screenshot-Green.jpg</image:loc>
-<image:title><![CDATA[Using the Crest Creator, users make their own crest by picking from a wide selection of colors, materials, and decorative prints, then Email it to themselves]]></image:title>
-</image:image>
-<image:image>
-<image:loc>https://olinkirk.land/media\posts\1/Death-Calculator-Quiz-Screenshot-Yes.jpg</image:loc>
-<image:title><![CDATA[The Death Predictor Exhibit is an intuitive quiz application that allows users to view how their own life choices affect their lifespan]]></image:title>
 </image:image>
 </url>
 <url>
