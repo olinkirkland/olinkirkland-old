@@ -3,14 +3,71 @@
     <title>Olin Kirkland</title>
     <link href="https://olinkirk.land/feed.xml" rel="self" />
     <link href="https://olinkirk.land" />
-    <updated>2021-05-14T09:56:40+02:00</updated>
+    <updated>2021-05-14T11:08:06+02:00</updated>
     <author>
         <name>Olin Kirkland</name>
     </author>
     <id>https://olinkirk.land</id>
 
     <entry>
-        <title>Planning Worldmaker</title>
+        <title>(re)Planning Worldmaker</title>
+        <author>
+            <name>Olin Kirkland</name>
+        </author>
+        <link href="https://olinkirk.land/replanning-worldmaker/"/>
+        <id>https://olinkirk.land/replanning-worldmaker/</id>
+            <category term="Worldmaker"/>
+
+        <updated>2021-05-14T11:08:06+02:00</updated>
+            <summary>
+                <![CDATA[
+                    A decent amount of work has gone into Worldmaker, and I kind of knew at the back of my head&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>A decent amount of work has gone into Worldmaker, and I kind of knew at the back of my head that there would need to be a rework but I didn't expect to do it this soon.</p>
+<p>How does it work? Like I mentioned before, the core concept behind Worldmaker is putting the user behind the wheel of <strong>keystone decisions</strong>, called "Tasks" in the app.</p>
+<p>I realize now that I should have planned out a larger number of these before jumping into the code.</p>
+<figure class="post__image post__image--center" ><img loading="lazy" src="https://olinkirk.land/media/posts/14/tasks.png" sizes="(max-width: 48em) 100vw, 100vw" srcset="https://olinkirk.land/media/posts/14/responsive/tasks-xs.png 300w ,https://olinkirk.land/media/posts/14/responsive/tasks-sm.png 480w ,https://olinkirk.land/media/posts/14/responsive/tasks-md.png 768w"  alt="" width="490" height="456">
+<figcaption >All tasks can be viewed in one handy popup</figcaption>
+</figure>
+<p> </p>
+<p>As development progressed, I realized that it's really important that these tasks and their associated code:</p>
+<ol>
+<li>Are <strong>modular</strong></li>
+<li>Can easily have new ones added or inserted</li>
+<li>Have easy <strong>access </strong>to the state</li>
+</ol>
+<p>Unfortunately as I worked, I realized I had dug myself a pretty convoluted hole of a structure where a lot of the logic was performed within the "toolbar" - a UI element appearing on the right side of the screen, and due to the state's decidedly untyped nature, things got hard to understand fast, especially if I hadn't worked on it in a few days.</p>
+<p>The first task is more of a test case than anything. It requires the user to read a short introduction text in the toolbar, then continue to the next task.</p>
+<figure class="post__image post__image--center" ><img loading="lazy" src="https://olinkirk.land/media/posts/14/adl_2021-05-14_10-24-26.png" sizes="(max-width: 48em) 100vw, 100vw" srcset="https://olinkirk.land/media/posts/14/responsive/adl_2021-05-14_10-24-26-xs.png 300w ,https://olinkirk.land/media/posts/14/responsive/adl_2021-05-14_10-24-26-sm.png 480w ,https://olinkirk.land/media/posts/14/responsive/adl_2021-05-14_10-24-26-md.png 768w"  alt="" width="1896" height="1021">
+<figcaption >The first task</figcaption>
+</figure>
+<ul>
+<li><strong>Top Bar: </strong>Along the top of the screen, there's a pretty empty bar whose only real purpose is to hold the logo and the save button. In the future, app-level buttons will go here - to access options or screenshot functionality.</li>
+<li><strong>Layers:</strong> On the far left, there's a layers panel that is hidden by default. Map layers can be toggled and rearranged from this panel. Layers that are not available are locked.</li>
+<li><strong>The Map:</strong> In the center of the screen is the map. The map is directly changed by the state. When there's a state change event, the map redraws the affected layers.</li>
+<li><strong>The Toolbar:</strong> The toolbar is where the user can affect the current task or progress to the next task. Changing options in the toolbar affects the state.</li>
+</ul>
+<p>User flow goes something like this:</p>
+<ol>
+<li>User makes a change to toolbar</li>
+<li>State changes</li>
+<li>Map changes to reflect state change</li>
+</ol>
+<p>My big mistake was not to abstract the state, and fail to create an overall modularization of the different tasks as their own classes. Since a lot of logic takes place within the toolbar itself right now, I need to figure out how to organize the code and content so that the toolbar does no logic and only forwards the desired changes to a state controller that knows what the current task is and what classes will take over the necessary calculations.</p>
+<p>My next step will be to create a proper flow chart that can be referred to when crafting a new structure for the program.</p>
+<div class="gallery-wrapper"><div class="gallery"  data-is-empty="false" data-columns="3">
+<figure class="gallery__item"><a href="https://olinkirk.land/media/posts/14/gallery/adl_2021-05-14_11-05-26.png" data-size="1896x1021"><img loading="lazy" src="https://olinkirk.land/media/posts/14/gallery/adl_2021-05-14_11-05-26-thumbnail.png" alt="" width="768" height="414"></a></figure>
+<figure class="gallery__item"><a href="https://olinkirk.land/media/posts/14/gallery/adl_2021-05-14_11-06-08.png" data-size="1896x1021"><img loading="lazy" src="https://olinkirk.land/media/posts/14/gallery/adl_2021-05-14_11-06-08-thumbnail.png" alt="" width="768" height="414"></a></figure>
+<figure class="gallery__item"><a href="https://olinkirk.land/media/posts/14/gallery/adl_2021-05-14_11-05-59.png" data-size="1896x1021"><img loading="lazy" src="https://olinkirk.land/media/posts/14/gallery/adl_2021-05-14_11-05-59-thumbnail.png" alt="" width="768" height="414"></a></figure>
+</div></div>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Worldmaker</title>
         <author>
             <name>Olin Kirkland</name>
         </author>
@@ -18,7 +75,7 @@
         <id>https://olinkirk.land/worldmaker/</id>
             <category term="Worldmaker"/>
 
-        <updated>2021-05-14T09:56:40+02:00</updated>
+        <updated>2021-05-14T10:01:22+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://olinkirk.land/media/posts/13/adl_2021-03-11_23-15-00.png" alt="" />
