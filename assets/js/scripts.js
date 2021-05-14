@@ -8,7 +8,7 @@ window.addEventListener('scroll', function (e) {
 	last_scroll_position = window.scrollY;
 
 	// Scrolling down
-	if (new_scroll_position < last_scroll_position && last_scroll_position > 60) {
+	if (new_scroll_position < last_scroll_position && last_scroll_position > 80) {
 		header.classList.remove("is-visible");
 		header.classList.add("is-hidden");
 
@@ -31,6 +31,7 @@ window.addEventListener('scroll', function (e) {
 
 	new_scroll_position = last_scroll_position;
 });
+
 
 // Dropdown menu
 (function (menuConfig) {
@@ -97,6 +98,8 @@ window.addEventListener('scroll', function (e) {
         } else if (config.mobileMenuMode === 'sidebar') {
             initMobileMenuSidebar();
         }
+
+        initClosingMenuOnClickLink();
 
         if (!config.isHoverMenu) {
             initAriaAttributes();
@@ -351,6 +354,7 @@ window.addEventListener('scroll', function (e) {
                             this.setAttribute('data-last-click', currentTime);
                         } else if (lastClick + config.doubleClickTime > currentTime) {
                             e.stopPropagation();
+                            closeMenu(this, true);
                         }
                     });
                 }
@@ -381,10 +385,62 @@ window.addEventListener('scroll', function (e) {
     }
 
     /**
+     * Close menu on click link
+     */
+    function initClosingMenuOnClickLink () {
+        var links = document.querySelectorAll(config.menuSelector + ' a');
+
+        for (var i = 0; i < links.length; i++) {
+            if (links[i].parentNode.classList.contains(config.parentItemClass)) {
+                continue;
+            }
+
+            links[i].addEventListener('click', function (e) {
+                closeMenu(this, false);
+            });
+        }
+    }
+
+    /**
+     * Close menu
+     */
+    function closeMenu (clickedLink, forceClose) {
+        if (forceClose === false) {
+            if (clickedLink.parentNode.classList.contains(config.parentItemClass)) {
+                return;
+            }
+        }
+
+        var relatedContainer = document.querySelector(config.relatedContainerForOverlayMenuSelector);
+        var button = document.querySelector(config.buttonSelector);
+        var menuWrapper = document.querySelector('.' + config.mobileMenuOverlayClass);
+
+        if (!menuWrapper) {
+            menuWrapper = document.querySelector('.' + config.mobileMenuSidebarClass);
+        }
+
+        menuWrapper.classList.add(config.hiddenElementClass);
+        button.classList.remove(config.openedMenuClass);
+        button.setAttribute(config.ariaButtonAttribute, false);
+        document.documentElement.classList.remove(config.noScrollClass);
+
+        if (relatedContainer) {
+            relatedContainer.classList.remove(config.relatedContainerForOverlayMenuClass);
+        }
+
+        var menuOverlay = document.querySelector('.' + config.mobileMenuSidebarOverlayClass);
+
+        if (menuOverlay) {
+            menuOverlay.classList.add(config.hiddenElementClass);
+        }
+    }
+
+    /**
      * Run menu scripts 
      */
     init();
 })(window.publiiThemeMenuConfig);
+
 
 // Share buttons pop-up
 (function () {
@@ -445,3 +501,34 @@ window.addEventListener('scroll', function (e) {
         return !!popup;
     }
 })();
+
+
+// Load search input area
+var searchButton = document.querySelector('.js-search-btn');
+    searchOverlay = document.querySelector('.js-search-overlay');
+    searchInput = document.querySelector('.js-search-input');
+
+if (searchButton) {
+    searchButton.addEventListener('click', function () {        
+        searchOverlay.classList.toggle('expanded');
+       
+        setTimeout(function() {
+            if (searchOverlay.classList.contains('expanded')) {
+                searchInput.focus();
+            }
+        }, 60);        
+    });
+
+    searchOverlay.addEventListener('click', function (e) {
+        e.stopPropagation();
+    });
+
+    searchButton.addEventListener('click', function (e) {
+        e.stopPropagation();
+    });
+
+    document.body.addEventListener('click', function () {
+        searchOverlay.classList.remove('expanded');
+    });
+}
+

@@ -3,10 +3,62 @@
     <title>Olin Kirkland</title>
     <link href="https://olinkirk.land/feed.xml" rel="self" />
     <link href="https://olinkirk.land" />
-    <updated>1970-01-01T01:00:00+01:00</updated>
+    <updated>2021-05-14T09:56:40+02:00</updated>
     <author>
         <name>Olin Kirkland</name>
     </author>
     <id>https://olinkirk.land</id>
 
+    <entry>
+        <title>Planning Worldmaker</title>
+        <author>
+            <name>Olin Kirkland</name>
+        </author>
+        <link href="https://olinkirk.land/worldmaker/"/>
+        <id>https://olinkirk.land/worldmaker/</id>
+            <category term="Worldmaker"/>
+
+        <updated>2021-05-14T09:56:40+02:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://olinkirk.land/media/posts/13/adl_2021-03-11_23-15-00.png" alt="" />
+                    My world generation projects have gone through a few iterations now. First, I had "Realms", in which I did a&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <img src="https://olinkirk.land/media/posts/13/adl_2021-03-11_23-15-00.png" alt="" />
+                <p>My world generation projects have gone through a few iterations now.</p>
+<p>First, I had "Realms", in which I did a ton of cool stuff like drawing forests and rivers, generating height maps from different effects (like island shapes and preset mountain ranges), creating regions with natural boundaries like rivers, mountains, and coasts, determining the best place for cities and towns to be located, and an extensive naming system that used word combinations in English and German to produce believable medieval place names. This was really exciting to put together but the technical debt became too great in the end and I was having a lot of trouble with wind simulation, continent generation, my code structure, and miserable performance. I put down the procedural experimenting for a while.</p>
+<figure class="post__image" ><img loading="lazy" src="https://olinkirk.land/media/posts/13/chrome_2021-03-11_23-21-56.png" sizes="(max-width: 48em) 100vw, 100vw" srcset="https://olinkirk.land/media/posts/13/responsive/chrome_2021-03-11_23-21-56-xs.png 300w ,https://olinkirk.land/media/posts/13/responsive/chrome_2021-03-11_23-21-56-sm.png 480w ,https://olinkirk.land/media/posts/13/responsive/chrome_2021-03-11_23-21-56-md.png 768w"  alt="Realms with forests, cities, and connecting roads" width="2260" height="1461">
+<figcaption >Realms with forests, cities, and connecting roads</figcaption>
+</figure>
+<p>Then, I decided that realms weren't enough. I wanted to make "Worlds". Realms had never felt that big, really - the regions felt kind of small and the islands produced by the generator didn't look or act like real continents. I also had had a lot of trouble with rendering mountains and wanted to do something more '3D'. So I started with Worlds. It felt really good going back to the drawing board and beginning with an eye on performance: I used a quad-tree to keep track of the voronoi cell points so that finding points would be smooth. The different logic layers like wind and hydrology were separated reasonably into different areas of the code instead of being jumbled together. The logic occurred in one place and once it was done, the map was drawn in a single step. In general, Worlds was leaps and bounds ahead of Realms.</p>
+<figure class="post__image" ><img loading="lazy" src="https://olinkirk.land/media/posts/13/adl_2021-03-09_23-23-45.png" sizes="(max-width: 48em) 100vw, 100vw" srcset="https://olinkirk.land/media/posts/13/responsive/adl_2021-03-09_23-23-45-xs.png 300w ,https://olinkirk.land/media/posts/13/responsive/adl_2021-03-09_23-23-45-sm.png 480w ,https://olinkirk.land/media/posts/13/responsive/adl_2021-03-09_23-23-45-md.png 768w"  alt="Worlds with &quot;low-poly&quot; style relief shading" width="1692" height="968">
+<figcaption >Worlds with "low-poly" style relief shading</figcaption>
+</figure>
+<p>But even so, some of the new features I added felt cumbersome. Settings were organized pretty poorly and wind still didn't work well. I thought the 3D style initially looked really good but the longer I worked with it the more tiresome it grew. I really wanted to make a stylized 2D map and the low-poly shading just wasn't doing that for me. The tectonics system I introduced was good on the surface but only about 10% of the resulting maps looked "fun".</p>
+<p>Here comes Worldmaker.</p>
+<ol>
+<li>1. No longer satisfied with purely procedural maps, I want to make an application that <strong>lets the user define different "keystone" decisions</strong> that are hard to generate.</li>
+<li>I want to release the app once it's functional to get feedback - and continue to <strong>release versions with improvements</strong> that enhance or replace the "keystone" decisions.</li>
+<li>To do this, I decided to <strong>make a launcher</strong> first. A launcher will let users install different versions of the app and create, load, and share their own world projects.</li>
+</ol>
+<p>What are examples of "keystone" decisions? In Realms, only one keystone could be set: The map's seed, a number used to determine every random aspect of the map. Worlds introduced a number of settings to fine tune the map, but the map settings weren't stored with the map. Sea level, wind strength, and average temperature are all easily set keystones with a slider but something like tectonic plate design or island chains is not.</p>
+<p>I want this to be a lot closer to what Azgaar does in his map generator, but more step-by-step and intuitive as far as UI goes.</p>
+<div class="gallery-wrapper"><div class="gallery"  data-is-empty="false" data-columns="3">
+<figure class="gallery__item"><a href="https://olinkirk.land/media/posts/13/gallery/adl_2021-03-11_23-05-25.png" data-size="480x671"><img loading="lazy" src="https://olinkirk.land/media/posts/13/gallery/adl_2021-03-11_23-05-25-thumbnail.png" alt="" width="480" height="671"></a>
+<figcaption>Creating a new project</figcaption>
+</figure>
+<figure class="gallery__item"><a href="https://olinkirk.land/media/posts/13/gallery/adl_2021-03-11_23-09-54.png" data-size="1920x1080"><img loading="lazy" src="https://olinkirk.land/media/posts/13/gallery/adl_2021-03-11_23-09-54-thumbnail.png" alt="" width="768" height="432"></a>
+<figcaption>Managing versions</figcaption>
+</figure>
+<figure class="gallery__item"><a href="https://olinkirk.land/media/posts/13/gallery/chrome_2021-03-01_13-21-16.png" data-size="984x734"><img loading="lazy" src="https://olinkirk.land/media/posts/13/gallery/chrome_2021-03-01_13-21-16-thumbnail.png" alt="https://dribbble.com/shots/10090105-Dashboard-UI" width="768" height="573"></a>
+<figcaption>UI Design Inspiration</figcaption>
+</figure>
+</div></div>
+<p>I've spent several evenings designing and writing the code for the different UI components in the launcher, and the style will carry over into the application itself.</p>
+            ]]>
+        </content>
+    </entry>
 </feed>
