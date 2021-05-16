@@ -3,24 +3,12 @@
     <title>Olin Kirkland</title>
     <link href="https://olinkirk.land/feed.xml" rel="self" />
     <link href="https://olinkirk.land" />
-    <updated>2021-05-14T16:07:15+02:00</updated>
+    <updated>2021-05-16T21:08:25+02:00</updated>
     <author>
         <name>Olin Kirkland</name>
     </author>
     <id>https://olinkirk.land</id>
 
-    <entry>
-        <title>Code Structure &amp; State Management</title>
-        <author>
-            <name>Olin Kirkland</name>
-        </author>
-        <link href="https://olinkirk.land/code-structure-and-state-management/"/>
-        <id>https://olinkirk.land/code-structure-and-state-management/</id>
-
-        <updated>2021-05-14T16:07:15+02:00</updated>
-            <summary></summary>
-        <content></content>
-    </entry>
     <entry>
         <title>Defining Keystone Decisions</title>
         <author>
@@ -131,7 +119,7 @@
         <id>https://olinkirk.land/worldmaker/</id>
             <category term="Worldmaker"/>
 
-        <updated>2021-05-14T10:01:22+02:00</updated>
+        <updated>2021-05-16T21:08:25+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://olinkirk.land/media/posts/13/adl_2021-03-11_23-15-00.png" alt="" />
@@ -153,7 +141,7 @@
 <p>But even so, some of the new features I added felt cumbersome. Settings were organized pretty poorly and wind still didn't work well. I thought the 3D style initially looked really good but the longer I worked with it the more tiresome it grew. I really wanted to make a stylized 2D map and the low-poly shading just wasn't doing that for me. The tectonics system I introduced was good on the surface but only about 10% of the resulting maps looked "fun".</p>
 <p>Here comes Worldmaker.</p>
 <ol>
-<li>1. No longer satisfied with purely procedural maps, I want to make an application that <strong>lets the user define different "keystone" decisions</strong> that are hard to generate.</li>
+<li>No longer satisfied with purely procedural maps, I want to make an application that <strong>lets the user define different "keystone" decisions</strong> that are hard to generate.</li>
 <li>I want to release the app once it's functional to get feedback - and continue to <strong>release versions with improvements</strong> that enhance or replace the "keystone" decisions.</li>
 <li>To do this, I decided to <strong>make a launcher</strong> first. A launcher will let users install different versions of the app and create, load, and share their own world projects.</li>
 </ol>
