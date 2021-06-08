@@ -10,6 +10,23 @@
     },
     "items": [
         {
+            "id": "https://olinkirk.land/code-structure-and-state-management/",
+            "url": "https://olinkirk.land/code-structure-and-state-management/",
+            "title": "Code Structure &amp; State Management",
+            "summary": "Since the structure of the application and the user's actions revolves around tasks (keystone decisions), it feels right to build&hellip;",
+            "content_html": "<p>Since the structure of the application and the user's actions revolves around tasks (keystone decisions), it feels right to build the structure of the code around these as well. To do this, I decided to make a Task class that contains all the information for a task, including the task's name and references to relevant modules.</p>\n<p>A singleton contains all tasks and can perform operations like setting the current task or incrementing to the next task.</p>\n<p>Tasks need to have a lot of control over the application state, and be referenced to see what gets displayed and calculated. Essentially a task acts the way a game cartridge would in a gaming console - you slide on in and you could have a totally different game, but it is still controlled using the same way (a controller) and still communicates information to the user using the same methods (a screen/sound).</p>\n<figure class=\"post__image post__image--center\" ><img loading=\"lazy\" src=\"https://olinkirk.land/media/posts/16/Task-1.png\" sizes=\"(max-width: 48em) 100vw, 100vw\" srcset=\"https://olinkirk.land/media/posts/16/responsive/Task-1-xs.png 300w ,https://olinkirk.land/media/posts/16/responsive/Task-1-sm.png 480w ,https://olinkirk.land/media/posts/16/responsive/Task-1-md.png 768w\"  alt=\"\" width=\"964\" height=\"512\">\n<figcaption >Different events act upon the task</figcaption>\n</figure>\n<p>Different events (in the game console metaphor, controllers) will act on the task. It's important for each task therefore to have a function to handle any of these events. Creating an abstract Task class to inherit the other task classes from helps keep this organized.</p>",
+            "image": "https://olinkirk.land/media/posts/16/Task-1-2.png",
+            "author": {
+                "name": "Olin Kirkland"
+            },
+            "tags": [
+                   "Worldmaker",
+                   "Blog"
+            ],
+            "date_published": "2021-06-08T15:35:00+02:00",
+            "date_modified": "2021-06-08T15:35:00+02:00"
+        },
+        {
             "id": "https://olinkirk.land/defining-keystone-decisions/",
             "url": "https://olinkirk.land/defining-keystone-decisions/",
             "title": "Defining Keystone Decisions",
@@ -20,10 +37,11 @@
                 "name": "Olin Kirkland"
             },
             "tags": [
-                   "Worldmaker"
+                   "Worldmaker",
+                   "Blog"
             ],
-            "date_published": "2021-05-14T13:41:33+02:00",
-            "date_modified": "2021-05-14T15:34:52+02:00"
+            "date_published": "2021-05-16T13:41:00+02:00",
+            "date_modified": "2021-06-08T09:26:54+02:00"
         },
         {
             "id": "https://olinkirk.land/replanning-worldmaker/",
@@ -36,10 +54,11 @@
                 "name": "Olin Kirkland"
             },
             "tags": [
-                   "Worldmaker"
+                   "Worldmaker",
+                   "Blog"
             ],
-            "date_published": "2021-05-14T10:03:32+02:00",
-            "date_modified": "2021-05-14T14:16:44+02:00"
+            "date_published": "2021-05-14T10:03:00+02:00",
+            "date_modified": "2021-06-08T09:26:46+02:00"
         },
         {
             "id": "https://olinkirk.land/worldmaker/",
@@ -52,10 +71,11 @@
                 "name": "Olin Kirkland"
             },
             "tags": [
-                   "Worldmaker"
+                   "Worldmaker",
+                   "Blog"
             ],
-            "date_published": "2021-03-11T23:11:39+01:00",
-            "date_modified": "2021-05-16T21:08:25+02:00"
+            "date_published": "2021-03-11T23:11:00+01:00",
+            "date_modified": "2021-06-08T09:25:48+02:00"
         }
     ]
 }
