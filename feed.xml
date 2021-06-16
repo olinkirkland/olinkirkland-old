@@ -3,7 +3,7 @@
     <title>Olin Kirkland</title>
     <link href="https://olinkirk.land/feed.xml" rel="self" />
     <link href="https://olinkirk.land" />
-    <updated>2021-06-08T15:35:00+02:00</updated>
+    <updated>2021-06-16T16:28:32+02:00</updated>
     <author>
         <name>Olin Kirkland</name>
     </author>
@@ -19,16 +19,16 @@
             <category term="Worldmaker"/>
             <category term="Blog"/>
 
-        <updated>2021-06-08T15:35:00+02:00</updated>
+        <updated>2021-06-16T16:28:09+02:00</updated>
             <summary>
                 <![CDATA[
-                        <img src="https://olinkirk.land/media/posts/16/Task-1-2.png" alt="" />
+                        <img src="https://olinkirk.land/media/posts/16/urban-construction-building-sketch-city-house-town-vector-illustration-isolated-white-background-85788471.jpg" alt="" />
                     Since the structure of the application and the user's actions revolves around tasks (keystone decisions), it feels right to build&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                    <img src="https://olinkirk.land/media/posts/16/Task-1-2.png" alt="" />
+                    <img src="https://olinkirk.land/media/posts/16/urban-construction-building-sketch-city-house-town-vector-illustration-isolated-white-background-85788471.jpg" alt="" />
                 <p>Since the structure of the application and the user's actions revolves around tasks (keystone decisions), it feels right to build the structure of the code around these as well. To do this, I decided to make a Task class that contains all the information for a task, including the task's name and references to relevant modules.</p>
 <p>A singleton contains all tasks and can perform operations like setting the current task or incrementing to the next task.</p>
 <p>Tasks need to have a lot of control over the application state, and be referenced to see what gets displayed and calculated. Essentially a task acts the way a game cartridge would in a gaming console - you slide on in and you could have a totally different game, but it is still controlled using the same way (a controller) and still communicates information to the user using the same methods (a screen/sound).</p>
@@ -49,7 +49,7 @@
             <category term="Worldmaker"/>
             <category term="Blog"/>
 
-        <updated>2021-06-08T09:26:54+02:00</updated>
+        <updated>2021-06-16T16:28:18+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://olinkirk.land/media/posts/15/L-Karniesbogen_keystone.png" alt="" />
@@ -88,7 +88,7 @@
             <category term="Worldmaker"/>
             <category term="Blog"/>
 
-        <updated>2021-06-08T09:26:46+02:00</updated>
+        <updated>2021-06-16T16:28:25+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://olinkirk.land/media/posts/14/adl_2021-05-14_11-14-33.png" alt="" />
@@ -152,7 +152,7 @@
             <category term="Worldmaker"/>
             <category term="Blog"/>
 
-        <updated>2021-06-08T09:25:48+02:00</updated>
+        <updated>2021-06-16T16:28:32+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://olinkirk.land/media/posts/13/adl_2021-03-11_23-15-00.png" alt="" />
