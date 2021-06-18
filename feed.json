@@ -10,6 +10,23 @@
     },
     "items": [
         {
+            "id": "https://olinkirk.land/drawing-and-layers/",
+            "url": "https://olinkirk.land/drawing-and-layers/",
+            "title": "Drawing &amp; Layers",
+            "summary": "Reimplementing the Layers Pane was easier than I expected. I had a lot of work done from before and was&hellip;",
+            "content_html": "<p>Reimplementing the Layers Pane was easier than I expected. I had a lot of work done from before and was able to copy most of the code directly from the <a href=\"https://olinkirk.land/worldmaker/\">previous iteration</a>.</p>\n<p>The major difference for layers this time comes down to code structure. Instead of sending events to the Map class, this time the Layers Pane and the Map pane both directly access the layers ArrayCollection that's created and stored in the TaskManager's currentTask. Since it's a singleton, there's no difficulty keeping the Map and Layers Pane in sync.</p>\n<p>The TaskManager itself keeps tabs on the ArrayCollection and dispatches events through the Signal singleton letting any listener to the Signal class know if a change to the Layers has occurred.</p>\n<p>Each task only initially stores the unique IDs of the layers that are to be displayed for that task. The actual Layer objects are initialized when the <code>resetLayers()</code> function is called (at the end of each Task class constructor). This function is also called when the layers are reset (returned to their original visibility and arrangement).</p>\n<pre>public function resetLayers():void<br>{<br>    layers.removeAll();<br>    for each (var l:String in _layerIds)<br>    {<br>        var layer:Layer = new Layer();<br>        layer.id = l;<br>        layer.visible = true;<br>        layer.allowed = true;<br>        layers.addItem(layer);<br>    }<br>}</pre>\n<figure class=\"post__image\" ><img loading=\"lazy\" src=\"https://olinkirk.land/media/posts/17/adl_2021-06-18_10-25-29.png\" sizes=\"(max-width: 48em) 100vw, 100vw\" srcset=\"https://olinkirk.land/media/posts/17/responsive/adl_2021-06-18_10-25-29-xs.png 300w ,https://olinkirk.land/media/posts/17/responsive/adl_2021-06-18_10-25-29-sm.png 480w ,https://olinkirk.land/media/posts/17/responsive/adl_2021-06-18_10-25-29-md.png 768w\"  alt=\"\" width=\"469\" height=\"205\">\n<figcaption >Finally, a functional layers pane for the new build</figcaption>\n</figure>\n<p>Drawing the map itself takes on a different approach as well. The <code>onDraw(event)</code> function contains a switch by layer id, and loops over each layer in the currentTask's Layers ArrayCollection. I decided to separate the act of drawing each layer into individual functions dedicated to that particular layer's visualization.</p>\n<pre>for each (var layer:Layer in layers)<br>{<br>    if (!layer.visible)<br>        continue;<br><br>    switch (layer.id)<br>    {<br>        case Layer.POINTS:<br>            drawPoints();<br>            break;<br>        case Layer.VORONOI:<br>            drawVoronoi();<br>            break;<br>        case Layer.DELAUNAY:<br>            drawDelaunay();<br>            break;<br>        case Layer.TECTONIC_PLATES:<br>            drawTectonics();<br>            break;<br>    }<br>}</pre>\n<p>If a new layer is to be added to some task, the easy scalability of this approach makes it very straightforward to expand tasks without needing to delve deep into existing code.</p>",
+            "image": "https://olinkirk.land/media/posts/17/chrome_2021-06-18_10-16-50.jpg",
+            "author": {
+                "name": "Olin Kirkland"
+            },
+            "tags": [
+                   "Worldmaker",
+                   "Blog"
+            ],
+            "date_published": "2021-06-18T10:14:58+02:00",
+            "date_modified": "2021-06-18T10:32:09+02:00"
+        },
+        {
             "id": "https://olinkirk.land/code-structure-and-state-management/",
             "url": "https://olinkirk.land/code-structure-and-state-management/",
             "title": "Code Structure &amp; State Management",
