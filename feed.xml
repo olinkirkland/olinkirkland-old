@@ -3,7 +3,7 @@
     <title>Olin Kirkland</title>
     <link href="https://olinkirk.land/feed.xml" rel="self" />
     <link href="https://olinkirk.land" />
-    <updated>2021-07-06T14:56:54+02:00</updated>
+    <updated>2021-07-06T15:03:33+02:00</updated>
     <author>
         <name>Olin Kirkland</name>
     </author>
@@ -19,7 +19,7 @@
             <category term="Worldmaker"/>
             <category term="Blog"/>
 
-        <updated>2021-07-06T14:56:54+02:00</updated>
+        <updated>2021-07-06T15:03:22+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://olinkirk.land/media/posts/18/rundll32_2021-07-06_14-48-33.jpg" alt="" />
@@ -31,7 +31,6 @@
                     <img src="https://olinkirk.land/media/posts/18/rundll32_2021-07-06_14-48-33.jpg" alt="" />
                 <p>As discussed in my post about <a href="https://olinkirk.land/defining-keystone-decisions/">worldbuilding keystones</a>, tectonic plates are a core concept that's really important to get right if things like mountain ranges, island chains, and realistic(ish) landmass formations. And if the resulting height map isn't at least kind of believable and follows some semblance of natural processes, nothing else will be.</p>
 <p>My approach so far is a little simplistic, but I got to work out some kinks of how the different parts of the app interact with each other during the development, and due to the modular nature of how the app is structured, coming back to this step later on will be very straightforward.</p>
-<p>First things first, it's important to define what a tectonic plate is.</p>
 <blockquote>
 <p><em>Tectonic plates</em> are pieces of Earth's crust and uppermost mantle.</p>
 </blockquote>
@@ -47,12 +46,16 @@
 <li>Define a type for each plate (oceanic or continental)</li>
 <li>Define a direction (random) for each plate</li>
 </ol>
-<figure class="post__image" ><img loading="lazy" src="https://olinkirk.land/media/posts/18/adl_2021-07-06_14-46-33.png" sizes="(max-width: 48em) 100vw, 100vw" srcset="https://olinkirk.land/media/posts/18/responsive/adl_2021-07-06_14-46-33-xs.png 300w ,https://olinkirk.land/media/posts/18/responsive/adl_2021-07-06_14-46-33-sm.png 480w ,https://olinkirk.land/media/posts/18/responsive/adl_2021-07-06_14-46-33-md.png 768w"  alt="" width="1896" height="1021">
+<figure class="post__image post__image--center" ><img loading="lazy" src="https://olinkirk.land/media/posts/18/adl_2021-07-06_14-46-33.png" sizes="(max-width: 48em) 100vw, 100vw" srcset="https://olinkirk.land/media/posts/18/responsive/adl_2021-07-06_14-46-33-xs.png 300w ,https://olinkirk.land/media/posts/18/responsive/adl_2021-07-06_14-46-33-sm.png 480w ,https://olinkirk.land/media/posts/18/responsive/adl_2021-07-06_14-46-33-md.png 768w"  alt="" width="1896" height="1021">
 <figcaption >Assigning the tectonic plates in the app</figcaption>
 </figure>
 <p>I've decided not to worry about wrapping my map east-west, mainly because dealing with the voronoi points wrapping/repeating is a huge hassle and I've dealt with that before. Instead, I'm just assigning any tectonic plate that touches the border of the map to be a "deep" plate. This plate type is unique to the app (and not found in real life); the height map will ignore any border between deep plates. The idea is to get a big, flat ocean around a series of continents in the middle of the map. This way I can wrap around later when it comes to pathfinding, wind, climate, etc.</p>
 <p>Assigning plate types is straightforward: I want some percent of the area to belong to continental plates, so I first sort the plates from smallest to largest, then assign their type to continental one by one until the total area of continental plates exceeds the goal. I haven't decided what that percent should be yet, but I'll play around with it until I'm happy with it.</p>
-<p>It's totally possible for users to create their plates from scratch (well, to place the plate origins and choose the directions/types) but I added a "Quick Start" feature that gets prompted from a popup when entering the step to automatically generate plates from the get-go. I assume most users will just automatically generate plate combinations until they're happy with the result. At least, that's what I do!</p>
+<p>It's totally possible for users to create their plates from scratch (well, to place the plate origins and choose the directions/types).</p>
+<figure class="post__image post__image--center" ><img loading="lazy" src="https://olinkirk.land/media/posts/18/adl_2021-07-06_15-01-50.png" sizes="(max-width: 48em) 100vw, 100vw" srcset="https://olinkirk.land/media/posts/18/responsive/adl_2021-07-06_15-01-50-xs.png 300w ,https://olinkirk.land/media/posts/18/responsive/adl_2021-07-06_15-01-50-sm.png 480w ,https://olinkirk.land/media/posts/18/responsive/adl_2021-07-06_15-01-50-md.png 768w"  alt="" width="366" height="336">
+<figcaption >Editing a tectonic plate in the toolbar's plate list</figcaption>
+</figure>
+<p>I added a "Quick Start" feature that gets prompted from a popup when entering the step to automatically generate plates from the get-go. I assume most users will just automatically generate plate combinations until they're happy with the result.</p>
             ]]>
         </content>
     </entry>
@@ -66,7 +69,7 @@
             <category term="Worldmaker"/>
             <category term="Blog"/>
 
-        <updated>2021-06-18T10:33:22+02:00</updated>
+        <updated>2021-07-06T15:03:33+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://olinkirk.land/media/posts/17/chrome_2021-06-18_10-16-50.jpg" alt="" />
@@ -81,7 +84,7 @@
 <p>The TaskManager itself keeps tabs on the ArrayCollection and dispatches events through the Signal singleton letting any listener to the Signal class know if a change to the Layers has occurred.</p>
 <p>Each task only initially stores the unique IDs of the layers that are to be displayed for that task. The actual Layer objects are initialized when the <code>resetLayers()</code> function is called (at the end of each Task class constructor). This function is also called when the layers are reset (returned to their original visibility and arrangement).</p>
 <pre>public function resetLayers():void<br>{<br>    layers.removeAll();<br>    for each (var l:String in _layerIds)<br>    {<br>        var layer:Layer = new Layer();<br>        layer.id = l;<br>        layer.visible = true;<br>        layer.allowed = true;<br>        layers.addItem(layer);<br>    }<br>}</pre>
-<figure class="post__image" ><img loading="lazy" src="https://olinkirk.land/media/posts/17/adl_2021-06-18_10-25-29.png" sizes="(max-width: 48em) 100vw, 100vw" srcset="https://olinkirk.land/media/posts/17/responsive/adl_2021-06-18_10-25-29-xs.png 300w ,https://olinkirk.land/media/posts/17/responsive/adl_2021-06-18_10-25-29-sm.png 480w ,https://olinkirk.land/media/posts/17/responsive/adl_2021-06-18_10-25-29-md.png 768w"  alt="" width="469" height="205">
+<figure class="post__image post__image--center" ><img loading="lazy" src="https://olinkirk.land/media/posts/17/adl_2021-06-18_10-25-29.png" sizes="(max-width: 48em) 100vw, 100vw" srcset="https://olinkirk.land/media/posts/17/responsive/adl_2021-06-18_10-25-29-xs.png 300w ,https://olinkirk.land/media/posts/17/responsive/adl_2021-06-18_10-25-29-sm.png 480w ,https://olinkirk.land/media/posts/17/responsive/adl_2021-06-18_10-25-29-md.png 768w"  alt="" width="469" height="205">
 <figcaption >Finally, a functional layers pane for the new build</figcaption>
 </figure>
 <p>Drawing the map itself takes on a different approach as well. The <code>onDraw(event)</code> function contains a switch by layer id, and loops over each layer in the currentTask's Layers ArrayCollection. I decided to separate the act of drawing each layer into individual functions dedicated to that particular layer's visualization.</p>
