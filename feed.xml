@@ -3,7 +3,7 @@
     <title>Olin Kirkland</title>
     <link href="https://olinkirk.land/feed.xml" rel="self" />
     <link href="https://olinkirk.land" />
-    <updated>2021-07-07T23:48:09+02:00</updated>
+    <updated>2021-07-07T23:48:56+02:00</updated>
     <author>
         <name>Olin Kirkland</name>
     </author>
@@ -19,7 +19,7 @@
             <category term="Worldmaker"/>
             <category term="Blog"/>
 
-        <updated>2021-07-07T23:48:09+02:00</updated>
+        <updated>2021-07-07T23:48:56+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://olinkirk.land/media/posts/19/beeplugin_languages.png" alt="" />
@@ -32,8 +32,8 @@
                 <p>In the past, I've always just hardcoded the text on buttons, menus, and so on. This is fast, but makes any app really hard to translate into different languages.</p>
 <p>In my professional career as a software developer, I've come across a couple different methods of implementing localization and wanted to try my hand at implementing a simple form of it for my Worldmaker app. I decided on three rules.</p>
 <ol>
-<li><strong>Accessing strings needs to be simple</strong>. <code>LanguageManager.getText("foo", [], 0, false)</code> is ugly and confusing. Much easier: <code>Local.text("foo")</code></li>
-<li><strong>It has to be in JSON</strong>. No XML, no custom arrangement, just simple JSON that can be parsed in. I also happen to know the popular localization web platform <a href="https://poeditor.com/" target="_blank" rel="noopener noreferrer">POEditor</a> lets you import JSON which means outsourcing other languages would be a breeze.</li>
+<li>Accessing strings needs to be simple. <code>LanguageManager.getText("foo", [], 0, false)</code> is ugly and confusing. Much easier: <code>Local.text("foo")</code></li>
+<li>It has to be in JSON. No XML, no custom arrangement, just simple JSON that can be parsed in. I also happen to know the popular localization web platform <a href="https://poeditor.com/" target="_blank" rel="noopener noreferrer">POEditor</a> lets you import JSON which means outsourcing other languages would be a breeze.</li>
 <li>Adding new dictionaries and language entries should be straightforward. If I want to localize to a new language, I should be able to easily scale up my dictionaries to meet that need.</li>
 </ol>
 <p>First, I created a class called <code>Local.as</code> which stores all the logic needed for the dictionaries and language-related string manipulation.</p>
