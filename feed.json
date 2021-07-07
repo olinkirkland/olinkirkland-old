@@ -10,6 +10,23 @@
     },
     "items": [
         {
+            "id": "https://olinkirk.land/localization/",
+            "url": "https://olinkirk.land/localization/",
+            "title": "Localization",
+            "summary": "In the past, I've always just hardcoded the text on buttons, menus, and so on. This is fast, but makes&hellip;",
+            "content_html": "<p>In the past, I've always just hardcoded the text on buttons, menus, and so on. This is fast, but makes any app really hard to translate into different languages.</p>\n<p>In my professional career as a software developer, I've come across a couple different methods of implementing localization and wanted to try my hand at implementing a simple form of it for my Worldmaker app. I decided on three rules.</p>\n<ol>\n<li><strong>It has to be simple to access strings</strong>. No length names or variety of functions.</li>\n<li><strong>It has to be in JSON</strong>. No XML, no custom arrangement, just simple JSON that can be parsed in. I also happen to know the popular localization web platform <a href=\"https://poeditor.com/\" target=\"_blank\" rel=\"noopener noreferrer\">POEditor</a> lets you import JSON which means outsourcing other languages would be a breeze.</li>\n<li>Adding new dictionaries should be easy.</li>\n</ol>\n<p>Alright, let's take a look at what I did.</p>\n<p>First, I created a class called <code>Local.as</code> which stores all the logic needed for the dictionaries and language-related string manipulation.</p>\n<p>Let's break down what the class does. <code>Local.as</code> contains references to the JSON dictionaries, a property to keep track of the selected language, and the current dictionary of keys and terms.</p>\n<p>Apart from that, a function <code>set language(id:String)</code> sets the selected language and loads the appropriate dictionary, while the static function <code>get text(id:String, args:Array = null):String</code> allows other classes to easily access the current dictionary's key entries. If an unknown key is accessed, a trace lets me know exactly what key is missing so I can enter it into the dictionary.</p>\n<p>I implemented a little popup to change the language - finally the options button on the navigation bar has some use! I added pig-latin after a suggestion from a friend for testing purposes; it's easier to produce pig-latin on the fly than German or French and it looks better than lorem ipsum.</p>\n<figure class=\"post__image post__image--center\" ><img loading=\"lazy\" src=\"https://olinkirk.land/media/posts/19/adl_2021-07-07_22-32-57.png\" sizes=\"(max-width: 48em) 100vw, 100vw\" srcset=\"https://olinkirk.land/media/posts/19/responsive/adl_2021-07-07_22-32-57-xs.png 300w ,https://olinkirk.land/media/posts/19/responsive/adl_2021-07-07_22-32-57-sm.png 480w ,https://olinkirk.land/media/posts/19/responsive/adl_2021-07-07_22-32-57-md.png 768w\"  alt=\"\" width=\"487\" height=\"276\">\n<figcaption >The highly awaited options popup</figcaption>\n</figure>\n<figure class=\"post__image\" ><img loading=\"lazy\" src=\"https://olinkirk.land/media/posts/19/Untitled.png\" sizes=\"(max-width: 48em) 100vw, 100vw\" srcset=\"https://olinkirk.land/media/posts/19/responsive/Untitled-xs.png 300w ,https://olinkirk.land/media/posts/19/responsive/Untitled-sm.png 480w ,https://olinkirk.land/media/posts/19/responsive/Untitled-md.png 768w\"  alt=\"\" width=\"882\" height=\"860\">\n<figcaption >Left: English, Right: Pig-latin</figcaption>\n</figure>\n<p> </p>",
+            "image": "https://olinkirk.land/media/posts/19/beeplugin_languages.png",
+            "author": {
+                "name": "Olin Kirkland"
+            },
+            "tags": [
+                   "Worldmaker",
+                   "Blog"
+            ],
+            "date_published": "2021-07-07T22:18:01+02:00",
+            "date_modified": "2021-07-07T23:41:54+02:00"
+        },
+        {
             "id": "https://olinkirk.land/tectonic-plates/",
             "url": "https://olinkirk.land/tectonic-plates/",
             "title": "Tectonic Plates",
