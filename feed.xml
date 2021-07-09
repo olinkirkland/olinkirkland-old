@@ -3,12 +3,162 @@
     <title>Olin Kirkland</title>
     <link href="https://olinkirk.land/feed.xml" rel="self" />
     <link href="https://olinkirk.land" />
-    <updated>2021-07-08T11:40:18+02:00</updated>
+    <updated>2021-07-09T16:41:01+02:00</updated>
     <author>
         <name>Olin Kirkland</name>
     </author>
     <id>https://olinkirk.land</id>
 
+    <entry>
+        <title>Localization</title>
+        <author>
+            <name>Olin Kirkland</name>
+        </author>
+        <link href="https://olinkirk.land/localization/"/>
+        <id>https://olinkirk.land/localization/</id>
+            <category term="Worldmaker"/>
+            <category term="Blog"/>
+
+        <updated>2021-07-09T16:22:56+02:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://olinkirk.land/media/posts/19/beeplugin_languages.png" alt="" />
+                    I usually just hardcode the text on buttons, menus, and text fields. This is fast and for most of my&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <img src="https://olinkirk.land/media/posts/19/beeplugin_languages.png" alt="" />
+                <p>I usually just hardcode the text on buttons, menus, and text fields. This is fast and for most of my purposes definitely good enough, but makes any app really hard to translate into different languages.</p>
+<p>In my professional career as a software developer, I've come across a couple different methods of implementing localization and wanted to try implementing a simple form of it for my Worldmaker app. I decided on three objectives.</p>
+<ol>
+<li>Accessing strings needs to be simple. <code>LanguageManager.getText("foo", [], 0, false)</code> is ugly and confusing. Much easier: <code>Local.text("foo")</code></li>
+<li>It has to be in JSON. No XML, no custom arrangement, just simple JSON that can be parsed in. I also happen to know the popular localization web platform <a href="https://poeditor.com/" target="_blank" rel="noopener noreferrer">POEditor</a> lets you import JSON which means outsourcing newly added languages would be a breeze.</li>
+<li>Adding new dictionaries and language entries should be straightforward. If I want to localize to a new language, I should be able to easily scale up my dictionaries to meet that need.</li>
+</ol>
+<p>First, I created a class called <code>Local.as</code> which stores all the logic needed for the dictionaries and language-related string manipulation.</p>
+<p>Let's break down what the class does. <code>Local.as</code> contains references to the JSON dictionaries, a property to keep track of the selected language, and the current dictionary of keys and terms.</p>
+<p>Apart from that, a function <code>set language(id:String)</code> sets the selected language and loads the appropriate dictionary, while the static function <code>get text(id:String, args:Array = null):String</code> allows other classes to easily access the current dictionary's key entries. If an unknown key is accessed, a trace lets me know exactly what key is missing so I can enter it into the dictionary.</p>
+<p>I implemented a little popup to change the language - finally the options button on the navigation bar has some use! I added pig-latin after a suggestion from a friend for testing purposes; it's easier to produce pig-latin on the fly than German or French and it looks better than lorem ipsum.</p>
+<figure class="post__image post__image--center" ><img loading="lazy" src="https://olinkirk.land/media/posts/19/adl_2021-07-07_22-32-57.png" sizes="(max-width: 48em) 100vw, 100vw" srcset="https://olinkirk.land/media/posts/19/responsive/adl_2021-07-07_22-32-57-xs.png 300w ,https://olinkirk.land/media/posts/19/responsive/adl_2021-07-07_22-32-57-sm.png 480w ,https://olinkirk.land/media/posts/19/responsive/adl_2021-07-07_22-32-57-md.png 768w"  alt="" width="487" height="276">
+<figcaption >The highly awaited options popup</figcaption>
+</figure>
+<figure class="post__image" ><img loading="lazy" src="https://olinkirk.land/media/posts/19/Untitled.png" sizes="(max-width: 48em) 100vw, 100vw" srcset="https://olinkirk.land/media/posts/19/responsive/Untitled-xs.png 300w ,https://olinkirk.land/media/posts/19/responsive/Untitled-sm.png 480w ,https://olinkirk.land/media/posts/19/responsive/Untitled-md.png 768w"  alt="" width="882" height="860">
+<figcaption >Left: English, Right: Pig-latin</figcaption>
+</figure>
+<p>I'm very happy with how it turned out. One thing that I want to address in the future is the ability to change the language without having to reload the app.</p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Worlds | More Adventures in Generated Maps</title>
+        <author>
+            <name>Olin Kirkland</name>
+        </author>
+        <link href="https://olinkirk.land/worlds-or-more-procedurally-generated-adventures/"/>
+        <id>https://olinkirk.land/worlds-or-more-procedurally-generated-adventures/</id>
+            <category term="Projects"/>
+
+        <updated>2021-07-09T16:41:01+02:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://olinkirk.land/media/posts/22/adl_2021-07-09_15-47-23.png" alt="" />
+                    After Realms, I chose to build another app to procedurally generate maps. My initial focus when making this app, dubbed&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <img src="https://olinkirk.land/media/posts/22/adl_2021-07-09_15-47-23.png" alt="" />
+                <p>After <a href="https://olinkirk.land/realms/">Realms</a>, I chose to build another app to procedurally generate maps.</p>
+<p>My initial focus when making this app, dubbed "Worlds", was performance. A huge issue for me in Realms had been bad performance due to technical debt and amateur knowledge of how the different modules and layers worked together.</p>
+<p>I introduced a quad-tree to contain the points (cell centers), then implemented tectonic plates to replace the system for generating the height map (previously random mountains and hardcoded mountain ranges). The quad-tree makes it really fast to identify where a user has clicked, whereas in Realms there would be lag after a mouse-click while the program desperately looped through every cell to find the one closest to the cursor.</p>
+<p>Another issue I had in Realms had been how to display mountains. Mountains are often surrounded, at least partially, with dense forests. The way I drew forests was one big blob shape instead of individual trees, and getting something to wrap around another shape like that in 2D got pretty hard. I tried drawing mountains procedurally like Dragons Abound <a href="https://heredragonsabound.blogspot.com/2019/11/new-mountains-and-new-approach-part-1.html" target="_blank" rel="noopener noreferrer">so cleverly does</a>, but had limited success.</p>
+<p>I decided to try and render the world with "3D" like shading, based off some code in Amit Patel's original article <a href="http://www-cs-students.stanford.edu/~amitp/game-programming/polygon-map-generation/" target="_blank" rel="noopener noreferrer">Polygonal Map Generation for Games</a>.</p>
+<figure class="post__image" ><img loading="lazy" src="https://olinkirk.land/media/posts/22/adl_2021-04-08_23-35-20.png" sizes="(max-width: 48em) 100vw, 100vw" srcset="https://olinkirk.land/media/posts/22/responsive/adl_2021-04-08_23-35-20-xs.png 300w ,https://olinkirk.land/media/posts/22/responsive/adl_2021-04-08_23-35-20-sm.png 480w ,https://olinkirk.land/media/posts/22/responsive/adl_2021-04-08_23-35-20-md.png 768w"  alt="" width="1728" height="929">
+<figcaption >A simple transparent shading layer creates an unmistakable "low poly" effect and clearly indicates mountains and valleys</figcaption>
+</figure>
+<pre>public function calculateLighting(p:Cell, r:Corner, s:Corner):Number<br>{<br>    var lightVector:Vector3D = new Vector3D(1, 1, 0);<br><br>    var a:Vector3D = new Vector3D(p.point.x, p.point.y, p.elevation);<br>    var b:Vector3D = new Vector3D(r.point.x, r.point.y, r.elevation);<br>    var c:Vector3D = new Vector3D(s.point.x, s.point.y, s.elevation);<br><br>    var normal:Vector3D = b.subtract(a).crossProduct(c.subtract(a));<br>    if (normal.z &lt; 0)<br>        normal.scaleBy(-1);<br>    normal.normalize();<br><br>    var light:Number = 0.5 + 35 * normal.dotProduct(lightVector);<br>    if (light &lt; 0) light = 0;<br>    else if (light &gt; 1) light = 1;<br><br>    return light;<br>}</pre>
+<p>Additionally, I built the code from the ground up around the idea that each visual layer is modular and able to be toggled individually.</p>
+<figure class="post__image" ><img loading="lazy" src="https://olinkirk.land/media/posts/22/adl_2021-07-09_15-41-53.png" sizes="(max-width: 48em) 100vw, 100vw" srcset="https://olinkirk.land/media/posts/22/responsive/adl_2021-07-09_15-41-53-xs.png 300w ,https://olinkirk.land/media/posts/22/responsive/adl_2021-07-09_15-41-53-sm.png 480w ,https://olinkirk.land/media/posts/22/responsive/adl_2021-07-09_15-41-53-md.png 768w"  alt="" width="1437" height="215">
+<figcaption >I put the usability of the app first this time around</figcaption>
+</figure>
+<p>A settings popup allows multiple properties to be adjusted during runtime - however, the world has to be regenerated every time a setting is changed.</p>
+<figure class="post__image" ><img loading="lazy" src="https://olinkirk.land/media/posts/22/adl_2021-07-09_15-44-47.png" sizes="(max-width: 48em) 100vw, 100vw" srcset="https://olinkirk.land/media/posts/22/responsive/adl_2021-07-09_15-44-47-xs.png 300w ,https://olinkirk.land/media/posts/22/responsive/adl_2021-07-09_15-44-47-sm.png 480w ,https://olinkirk.land/media/posts/22/responsive/adl_2021-07-09_15-44-47-md.png 768w"  alt="" width="1187" height="1127">
+<figcaption >The settings popup gives me a lot more power over the generated world</figcaption>
+</figure>
+<figure class="post__image" ><img loading="lazy" src="https://olinkirk.land/media/posts/22/adl_2021-07-09_15-45-32.png" sizes="(max-width: 48em) 100vw, 100vw" srcset="https://olinkirk.land/media/posts/22/responsive/adl_2021-07-09_15-45-32-xs.png 300w ,https://olinkirk.land/media/posts/22/responsive/adl_2021-07-09_15-45-32-sm.png 480w ,https://olinkirk.land/media/posts/22/responsive/adl_2021-07-09_15-45-32-md.png 768w"  alt="" width="1789" height="374">
+<figcaption >The performance popup shows where I low hanging fruit can be tackled to fix performance issues</figcaption>
+</figure>
+<div class="gallery-wrapper"><div class="gallery"  data-is-empty="false" data-columns="3">
+<figure class="gallery__item"><a href="https://olinkirk.land/media/posts/22/gallery/adl_2021-07-09_15-46-25.png" data-size="1980x971"><img loading="lazy" src="https://olinkirk.land/media/posts/22/gallery/adl_2021-07-09_15-46-25-thumbnail.png" alt="" width="768" height="377"></a>
+<figcaption>Tectonic plates</figcaption>
+</figure>
+<figure class="gallery__item"><a href="https://olinkirk.land/media/posts/22/gallery/adl_2021-07-09_15-46-52.png" data-size="1973x968"><img loading="lazy" src="https://olinkirk.land/media/posts/22/gallery/adl_2021-07-09_15-46-52-thumbnail.png" alt="" width="768" height="377"></a>
+<figcaption>Wind</figcaption>
+</figure>
+<figure class="gallery__item"><a href="https://olinkirk.land/media/posts/22/gallery/adl_2021-07-09_15-47-03.png" data-size="1978x967"><img loading="lazy" src="https://olinkirk.land/media/posts/22/gallery/adl_2021-07-09_15-47-03-thumbnail.png" alt="" width="768" height="375"></a>
+<figcaption>Wind and moisture with relief shading</figcaption>
+</figure>
+<figure class="gallery__item"><a href="https://olinkirk.land/media/posts/22/gallery/adl_2021-07-09_15-47-23.png" data-size="1980x969"><img loading="lazy" src="https://olinkirk.land/media/posts/22/gallery/adl_2021-07-09_15-47-23-thumbnail.png" alt="" width="768" height="376"></a>
+<figcaption>Elevation and relief shading</figcaption>
+</figure>
+<figure class="gallery__item"><a href="https://olinkirk.land/media/posts/22/gallery/adl_2021-07-09_15-47-39.jpg" data-size="1972x961"><img loading="lazy" src="https://olinkirk.land/media/posts/22/gallery/adl_2021-07-09_15-47-39-thumbnail.jpg" alt="" width="768" height="374"></a>
+<figcaption>Flux with relief shading</figcaption>
+</figure>
+</div></div>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Tectonic Plates</title>
+        <author>
+            <name>Olin Kirkland</name>
+        </author>
+        <link href="https://olinkirk.land/tectonic-plates/"/>
+        <id>https://olinkirk.land/tectonic-plates/</id>
+            <category term="Worldmaker"/>
+            <category term="Blog"/>
+
+        <updated>2021-07-09T16:22:07+02:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://olinkirk.land/media/posts/18/rundll32_2021-07-06_14-48-33.jpg" alt="" />
+                    As discussed in my post about worldbuilding keystones, tectonic plates are a core concept that's really important to get right&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <img src="https://olinkirk.land/media/posts/18/rundll32_2021-07-06_14-48-33.jpg" alt="" />
+                <p>As discussed in my post about <a href="https://olinkirk.land/defining-keystone-decisions/">worldbuilding keystones</a>, tectonic plates are a core concept that's really important to get right if things like mountain ranges, island chains, and realistic(ish) landmass formations. And if the resulting height map isn't at least kind of believable and follows some semblance of natural processes, nothing else will be.</p>
+<p>My approach so far is a little simplistic, but I got to work out some kinks of how the different parts of the app interact with each other during the development, and due to the modular nature of how the app is structured, coming back to this step later on will be very straightforward.</p>
+<blockquote>
+<p><em>Tectonic plates</em> are pieces of Earth's crust and uppermost mantle.</p>
+</blockquote>
+<p>The theory of plate tectonics describes how these bits of crust have drifted around on the planet for the past three billion years, forming mountains when they crash into each other or trenches when they pull apart. Tectonic plates come in a variety of shapes and sizes, with each plate representing pretty distinct regions of the planet's surface.</p>
+<figure class="post__image" ><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Plates_tect2_en.svg/1200px-Plates_tect2_en.svg.png" data-is-external-image="true"  alt="" width="717" height="490">
+<figcaption >Earth's tectonic plates (Wikipedia)</figcaption>
+</figure>
+<p>If I wanted to really simulate plate tectonics, I'd have to model the different plates, their velocities, direction, the currents of magma beneath the crust, and how the plates change shape when they collide or sink. I don't really care too much (right now) about recreating the science behind plate tectonics, though it would be interesting to model plate movement and flora/fauna evolution over time. But for the purposes of my app, I don't think it's a crucial component. And like I said earlier, I can always come back to this step and do all that stuff.</p>
+<p>I decided to simplify the process into some steps:</p>
+<ol>
+<li>Identify tectonic plate "origins" to flood-fill from</li>
+<li>Expand the plates from their origins, taking into account a user-defined "jitter" to add randomness</li>
+<li>Define a type for each plate (oceanic or continental)</li>
+<li>Define a direction (random) for each plate</li>
+</ol>
+<figure class="post__image post__image--center" ><img loading="lazy" src="https://olinkirk.land/media/posts/18/adl_2021-07-06_14-46-33.png" sizes="(max-width: 48em) 100vw, 100vw" srcset="https://olinkirk.land/media/posts/18/responsive/adl_2021-07-06_14-46-33-xs.png 300w ,https://olinkirk.land/media/posts/18/responsive/adl_2021-07-06_14-46-33-sm.png 480w ,https://olinkirk.land/media/posts/18/responsive/adl_2021-07-06_14-46-33-md.png 768w"  alt="" width="1896" height="1021">
+<figcaption >Assigning the tectonic plates in the app</figcaption>
+</figure>
+<p>I've decided not to worry about wrapping my map east-west, mainly because dealing with the voronoi points wrapping/repeating is a huge hassle and I've dealt with that before. Instead, I'm just assigning any tectonic plate that touches the border of the map to be a "deep" plate. This plate type is unique to the app (and not found in real life); the height map will ignore any border between deep plates. The idea is to get a big, flat ocean around a series of continents in the middle of the map. This way I can wrap around later when it comes to pathfinding, wind, climate, etc.</p>
+<p>Assigning plate types is straightforward: I want some percent of the area to belong to continental plates, so I first sort the plates from smallest to largest, then assign their type to continental one by one until the total area of continental plates exceeds the goal. I haven't decided what that percent should be yet, but I'll play around with it until I'm happy with it.</p>
+<p>It's totally possible for users to create their plates from scratch (well, to place the plate origins and choose the directions/types).</p>
+<figure class="post__image post__image--center" ><img loading="lazy" src="https://olinkirk.land/media/posts/18/adl_2021-07-06_15-01-50.png" sizes="(max-width: 48em) 100vw, 100vw" srcset="https://olinkirk.land/media/posts/18/responsive/adl_2021-07-06_15-01-50-xs.png 300w ,https://olinkirk.land/media/posts/18/responsive/adl_2021-07-06_15-01-50-sm.png 480w ,https://olinkirk.land/media/posts/18/responsive/adl_2021-07-06_15-01-50-md.png 768w"  alt="" width="366" height="336">
+<figcaption >Editing a tectonic plate in the toolbar's plate list</figcaption>
+</figure>
+<p>I added a "Quick Start" feature that gets prompted from a popup when entering the step to automatically generate plates from the get-go. I assume most users will just automatically generate plate combinations until they're happy with the result.</p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Realms | A Journey into Procedurally Generated Maps</title>
         <author>
@@ -18,7 +168,7 @@
         <id>https://olinkirk.land/realms/</id>
             <category term="Projects"/>
 
-        <updated>2021-07-08T11:40:18+02:00</updated>
+        <updated>2021-07-09T16:40:48+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://olinkirk.land/media/posts/21/adl_2019-04-27_22-15-13.png" alt="" />
@@ -30,7 +180,7 @@
                     <img src="https://olinkirk.land/media/posts/21/adl_2019-04-27_22-15-13.png" alt="" />
                 <p>In 2018, I became interested in procedural generation in regards to map creation. It started with some basic procedural forest generation I did when I was still working at Paul Bernhard Exhibits where a colleague and I were working toward a multi-screen strategy game about renewable energy.</p>
 <p>I've always loved the sort of fantasy fiction with a map tucked in the front cover of the book. I drew inspiration from <a href="http://www-cs-students.stanford.edu/~amitp/game-programming/polygon-map-generation/">Amit Patel</a>, <a href="https://azgaar.wordpress.com/">Azgaar's Fantasy Map Generator</a>, <a href="https://heredragonsabound.blogspot.com/">Scott Turner</a>, and <a href="http://mewo2.com/notes/terrain/">Marting O'Leary</a>.</p>
-<p>I pulled inspiration and motivation from world map images like these.</p>
+<p>I pulled inspiration and motivation from maps like these.</p>
 <div class="gallery-wrapper"><div class="gallery"  data-is-empty="false" data-columns="3">
 <figure class="gallery__item"><a href="https://olinkirk.land/media/posts/21/gallery/Western-Torfani.jpg" data-size="4048x3320"><img loading="lazy" src="https://olinkirk.land/media/posts/21/gallery/Western-Torfani-thumbnail.jpg" alt="" width="768" height="630"></a>
 <figcaption>Western Torfani by Ilanthar</figcaption>
@@ -109,93 +259,46 @@
         </content>
     </entry>
     <entry>
-        <title>Localization</title>
+        <title>OMG | Exploring Making a Social Network</title>
         <author>
             <name>Olin Kirkland</name>
         </author>
-        <link href="https://olinkirk.land/localization/"/>
-        <id>https://olinkirk.land/localization/</id>
-            <category term="Worldmaker"/>
-            <category term="Blog"/>
+        <link href="https://olinkirk.land/omg-or-exploring-making-a-social-network/"/>
+        <id>https://olinkirk.land/omg-or-exploring-making-a-social-network/</id>
+            <category term="Projects"/>
 
-        <updated>2021-07-07T23:56:33+02:00</updated>
+        <updated>2021-07-09T16:15:46+02:00</updated>
             <summary>
                 <![CDATA[
-                        <img src="https://olinkirk.land/media/posts/19/beeplugin_languages.png" alt="" />
-                    I usually just hardcode the text on buttons, menus, and text fields. This is fast and for most of my&hellip;
+                        <img src="https://olinkirk.land/media/posts/23/flashplayer_32_sa_debug_2020-07-19_18-13-53.png" alt="" />
+                    OMGPOP was a big part of my high school experience: free online (Flash) games you can play with your friends&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                    <img src="https://olinkirk.land/media/posts/19/beeplugin_languages.png" alt="" />
-                <p>I usually just hardcode the text on buttons, menus, and text fields. This is fast and for most of my purposes definitely good enough, but makes any app really hard to translate into different languages.</p>
-<p>In my professional career as a software developer, I've come across a couple different methods of implementing localization and wanted to try implementing a simple form of it for my Worldmaker app. I decided on three objectives.</p>
-<ol>
-<li>Accessing strings needs to be simple. <code>LanguageManager.getText("foo", [], 0, false)</code> is ugly and confusing. Much easier: <code>Local.text("foo")</code></li>
-<li>It has to be in JSON. No XML, no custom arrangement, just simple JSON that can be parsed in. I also happen to know the popular localization web platform <a href="https://poeditor.com/" target="_blank" rel="noopener noreferrer">POEditor</a> lets you import JSON which means outsourcing newly added languages would be a breeze.</li>
-<li>Adding new dictionaries and language entries should be straightforward. If I want to localize to a new language, I should be able to easily scale up my dictionaries to meet that need.</li>
-</ol>
-<p>First, I created a class called <code>Local.as</code> which stores all the logic needed for the dictionaries and language-related string manipulation.</p>
-<p>Let's break down what the class does. <code>Local.as</code> contains references to the JSON dictionaries, a property to keep track of the selected language, and the current dictionary of keys and terms.</p>
-<p>Apart from that, a function <code>set language(id:String)</code> sets the selected language and loads the appropriate dictionary, while the static function <code>get text(id:String, args:Array = null):String</code> allows other classes to easily access the current dictionary's key entries. If an unknown key is accessed, a trace lets me know exactly what key is missing so I can enter it into the dictionary.</p>
-<p>I implemented a little popup to change the language - finally the options button on the navigation bar has some use! I added pig-latin after a suggestion from a friend for testing purposes; it's easier to produce pig-latin on the fly than German or French and it looks better than lorem ipsum.</p>
-<figure class="post__image post__image--center" ><img loading="lazy" src="https://olinkirk.land/media/posts/19/adl_2021-07-07_22-32-57.png" sizes="(max-width: 48em) 100vw, 100vw" srcset="https://olinkirk.land/media/posts/19/responsive/adl_2021-07-07_22-32-57-xs.png 300w ,https://olinkirk.land/media/posts/19/responsive/adl_2021-07-07_22-32-57-sm.png 480w ,https://olinkirk.land/media/posts/19/responsive/adl_2021-07-07_22-32-57-md.png 768w"  alt="" width="487" height="276">
-<figcaption >The highly awaited options popup</figcaption>
+                    <img src="https://olinkirk.land/media/posts/23/flashplayer_32_sa_debug_2020-07-19_18-13-53.png" alt="" />
+                <p>OMGPOP was a big part of my high school experience: free online (Flash) games you can play with your friends by inviting them to the current session with a url? Yes, please!</p>
+<p>I wanted to recreate that experience, but bit off more than I could chew. Learned a lot, though! You can view my code in my <a href="I worked for a while on a solo-project social gaming platform. Doing this, I learned a lot about networking, application design, and the Flex framework." target="_blank" rel="noopener noreferrer">GitHub repository</a>.</p>
+<div class="gallery-wrapper"><div class="gallery"  data-is-empty="false" data-columns="2">
+<figure class="gallery__item"><a href="https://olinkirk.land/media/posts/23/gallery/flashplayer_32_sa_debug_2020-07-20_23-09-55-2.png" data-size="1275x446"><img loading="lazy" src="https://olinkirk.land/media/posts/23/gallery/flashplayer_32_sa_debug_2020-07-20_23-09-55-2-thumbnail.png" alt="" width="768" height="269"></a>
+<figcaption>User profiles</figcaption>
 </figure>
-<figure class="post__image" ><img loading="lazy" src="https://olinkirk.land/media/posts/19/Untitled.png" sizes="(max-width: 48em) 100vw, 100vw" srcset="https://olinkirk.land/media/posts/19/responsive/Untitled-xs.png 300w ,https://olinkirk.land/media/posts/19/responsive/Untitled-sm.png 480w ,https://olinkirk.land/media/posts/19/responsive/Untitled-md.png 768w"  alt="" width="882" height="860">
-<figcaption >Left: English, Right: Pig-latin</figcaption>
+<figure class="gallery__item"><a href="https://olinkirk.land/media/posts/23/gallery/flashplayer_32_sa_debug_2020-07-20_01-32-26-2.png" data-size="273x161"><img loading="lazy" src="https://olinkirk.land/media/posts/23/gallery/flashplayer_32_sa_debug_2020-07-20_01-32-26-2-thumbnail.png" alt="" width="273" height="161"></a>
+<figcaption>The navigation banner indicates where a user is, like simplified breadcrumbs that only show the top level category</figcaption>
 </figure>
-<p>I'm very happy with how it turned out. One thing that I want to address in the future is the ability to change the language without having to reload the app.</p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>Tectonic Plates</title>
-        <author>
-            <name>Olin Kirkland</name>
-        </author>
-        <link href="https://olinkirk.land/tectonic-plates/"/>
-        <id>https://olinkirk.land/tectonic-plates/</id>
-            <category term="Worldmaker"/>
-            <category term="Blog"/>
-
-        <updated>2021-07-06T15:03:22+02:00</updated>
-            <summary>
-                <![CDATA[
-                        <img src="https://olinkirk.land/media/posts/18/rundll32_2021-07-06_14-48-33.jpg" alt="" />
-                    As discussed in my post about worldbuilding keystones, tectonic plates are a core concept that's really important to get right&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                    <img src="https://olinkirk.land/media/posts/18/rundll32_2021-07-06_14-48-33.jpg" alt="" />
-                <p>As discussed in my post about <a href="https://olinkirk.land/defining-keystone-decisions/">worldbuilding keystones</a>, tectonic plates are a core concept that's really important to get right if things like mountain ranges, island chains, and realistic(ish) landmass formations. And if the resulting height map isn't at least kind of believable and follows some semblance of natural processes, nothing else will be.</p>
-<p>My approach so far is a little simplistic, but I got to work out some kinks of how the different parts of the app interact with each other during the development, and due to the modular nature of how the app is structured, coming back to this step later on will be very straightforward.</p>
-<blockquote>
-<p><em>Tectonic plates</em> are pieces of Earth's crust and uppermost mantle.</p>
-</blockquote>
-<p>The theory of plate tectonics describes how these bits of crust have drifted around on the planet for the past three billion years, forming mountains when they crash into each other or trenches when they pull apart. Tectonic plates come in a variety of shapes and sizes, with each plate representing pretty distinct regions of the planet's surface.</p>
-<figure class="post__image" ><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Plates_tect2_en.svg/1200px-Plates_tect2_en.svg.png" data-is-external-image="true"  alt="" width="717" height="490">
-<figcaption >Earth's tectonic plates (Wikipedia)</figcaption>
+<figure class="gallery__item"><a href="https://olinkirk.land/media/posts/23/gallery/flashplayer_32_sa_debug_2020-07-25_00-09-48-2.png" data-size="1500x1200"><img loading="lazy" src="https://olinkirk.land/media/posts/23/gallery/flashplayer_32_sa_debug_2020-07-25_00-09-48-2-thumbnail.png" alt="" width="768" height="614"></a>
+<figcaption>If a user is blocked or doesn't exist, the server serves up a 404 equivalent</figcaption>
 </figure>
-<p>If I wanted to really simulate plate tectonics, I'd have to model the different plates, their velocities, direction, the currents of magma beneath the crust, and how the plates change shape when they collide or sink. I don't really care too much (right now) about recreating the science behind plate tectonics, though it would be interesting to model plate movement and flora/fauna evolution over time. But for the purposes of my app, I don't think it's a crucial component. And like I said earlier, I can always come back to this step and do all that stuff.</p>
-<p>I decided to simplify the process into some steps:</p>
-<ol>
-<li>Identify tectonic plate "origins" to flood-fill from</li>
-<li>Expand the plates from their origins, taking into account a user-defined "jitter" to add randomness</li>
-<li>Define a type for each plate (oceanic or continental)</li>
-<li>Define a direction (random) for each plate</li>
-</ol>
-<figure class="post__image post__image--center" ><img loading="lazy" src="https://olinkirk.land/media/posts/18/adl_2021-07-06_14-46-33.png" sizes="(max-width: 48em) 100vw, 100vw" srcset="https://olinkirk.land/media/posts/18/responsive/adl_2021-07-06_14-46-33-xs.png 300w ,https://olinkirk.land/media/posts/18/responsive/adl_2021-07-06_14-46-33-sm.png 480w ,https://olinkirk.land/media/posts/18/responsive/adl_2021-07-06_14-46-33-md.png 768w"  alt="" width="1896" height="1021">
-<figcaption >Assigning the tectonic plates in the app</figcaption>
+<figure class="gallery__item"><a href="https://olinkirk.land/media/posts/23/gallery/flashplayer_32_sa_debug_2020-07-23_10-17-53-2.png" data-size="1500x1200"><img loading="lazy" src="https://olinkirk.land/media/posts/23/gallery/flashplayer_32_sa_debug_2020-07-23_10-17-53-2-thumbnail.png" alt="" width="768" height="614"></a>
+<figcaption>Sleek UI and loading screen</figcaption>
 </figure>
-<p>I've decided not to worry about wrapping my map east-west, mainly because dealing with the voronoi points wrapping/repeating is a huge hassle and I've dealt with that before. Instead, I'm just assigning any tectonic plate that touches the border of the map to be a "deep" plate. This plate type is unique to the app (and not found in real life); the height map will ignore any border between deep plates. The idea is to get a big, flat ocean around a series of continents in the middle of the map. This way I can wrap around later when it comes to pathfinding, wind, climate, etc.</p>
-<p>Assigning plate types is straightforward: I want some percent of the area to belong to continental plates, so I first sort the plates from smallest to largest, then assign their type to continental one by one until the total area of continental plates exceeds the goal. I haven't decided what that percent should be yet, but I'll play around with it until I'm happy with it.</p>
-<p>It's totally possible for users to create their plates from scratch (well, to place the plate origins and choose the directions/types).</p>
-<figure class="post__image post__image--center" ><img loading="lazy" src="https://olinkirk.land/media/posts/18/adl_2021-07-06_15-01-50.png" sizes="(max-width: 48em) 100vw, 100vw" srcset="https://olinkirk.land/media/posts/18/responsive/adl_2021-07-06_15-01-50-xs.png 300w ,https://olinkirk.land/media/posts/18/responsive/adl_2021-07-06_15-01-50-sm.png 480w ,https://olinkirk.land/media/posts/18/responsive/adl_2021-07-06_15-01-50-md.png 768w"  alt="" width="366" height="336">
-<figcaption >Editing a tectonic plate in the toolbar's plate list</figcaption>
+<figure class="gallery__item"><a href="https://olinkirk.land/media/posts/23/gallery/flashplayer_32_sa_debug_2020-07-19_18-13-53-2.png" data-size="1500x1200"><img loading="lazy" src="https://olinkirk.land/media/posts/23/gallery/flashplayer_32_sa_debug_2020-07-19_18-13-53-2-thumbnail.png" alt="" width="768" height="614"></a>
+<figcaption>A combination of modern, bootstrap-esque design and nostalgic OMGPOP style</figcaption>
 </figure>
-<p>I added a "Quick Start" feature that gets prompted from a popup when entering the step to automatically generate plates from the get-go. I assume most users will just automatically generate plate combinations until they're happy with the result.</p>
+<figure class="gallery__item"><a href="https://olinkirk.land/media/posts/23/gallery/flashplayer_32_sa_debug_2020-07-15_00-21-09-2.png" data-size="901x790"><img loading="lazy" src="https://olinkirk.land/media/posts/23/gallery/flashplayer_32_sa_debug_2020-07-15_00-21-09-2-thumbnail.png" alt="" width="768" height="673"></a>
+<figcaption>Register/Login screen were fully functional with an Air implemented backend</figcaption>
+</figure>
+</div></div>
             ]]>
         </content>
     </entry>
@@ -209,7 +312,7 @@
             <category term="Worldmaker"/>
             <category term="Blog"/>
 
-        <updated>2021-07-06T15:03:33+02:00</updated>
+        <updated>2021-07-09T16:23:31+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://olinkirk.land/media/posts/17/chrome_2021-06-18_10-16-50.jpg" alt="" />
@@ -243,7 +346,7 @@
             <category term="Worldmaker"/>
             <category term="Blog"/>
 
-        <updated>2021-06-16T16:28:09+02:00</updated>
+        <updated>2021-07-09T16:23:38+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://olinkirk.land/media/posts/16/urban-construction-building-sketch-city-house-town-vector-illustration-isolated-white-background-85788471.jpg" alt="" />
@@ -273,7 +376,7 @@
             <category term="Worldmaker"/>
             <category term="Blog"/>
 
-        <updated>2021-07-07T10:21:29+02:00</updated>
+        <updated>2021-07-09T16:23:09+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://olinkirk.land/media/posts/15/L-Karniesbogen_keystone.png" alt="" />
@@ -312,7 +415,7 @@
             <category term="Worldmaker"/>
             <category term="Blog"/>
 
-        <updated>2021-06-16T16:28:25+02:00</updated>
+        <updated>2021-07-09T16:23:44+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://olinkirk.land/media/posts/14/adl_2021-05-14_11-14-33.png" alt="" />
@@ -376,7 +479,7 @@
             <category term="Worldmaker"/>
             <category term="Blog"/>
 
-        <updated>2021-06-16T16:28:32+02:00</updated>
+        <updated>2021-07-09T16:23:51+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://olinkirk.land/media/posts/13/adl_2021-03-11_23-15-00.png" alt="" />
