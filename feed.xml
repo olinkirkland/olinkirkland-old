@@ -3,12 +3,65 @@
     <title>Olin Kirkland</title>
     <link href="https://olinkirk.land/feed.xml" rel="self" />
     <link href="https://olinkirk.land" />
-    <updated>2021-08-06T16:06:48+02:00</updated>
+    <updated>2021-09-06T17:05:56+02:00</updated>
     <author>
         <name>Olin Kirkland</name>
     </author>
     <id>https://olinkirk.land</id>
 
+    <entry>
+        <title>Keeping Track of Saved Games</title>
+        <author>
+            <name>Olin Kirkland</name>
+        </author>
+        <link href="https://olinkirk.land/movie-nite-2/"/>
+        <id>https://olinkirk.land/movie-nite-2/</id>
+            <category term="Polaris"/>
+            <category term="Blog"/>
+
+        <updated>2021-09-06T17:05:56+02:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://olinkirk.land/media/posts/31/glacier-aurora-aurora-borealis-night.jpg" alt="" />
+                    For Polaris, I've decided to take the game development in little bite sized pieces and use the same approach to&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <img src="https://olinkirk.land/media/posts/31/glacier-aurora-aurora-borealis-night.jpg" alt="" />
+                <p>For Polaris, I've decided to take the game development in little bite sized pieces and use the same approach to development and design of the game as I did for Worldmaker: Modular pieces that can be expanded later.</p>
+<p>I chose to start with something pretty boring but important: Saved game management.</p>
+<p>I've kept myself from creating a new Polaris project just yet, and am trying to keep the project generic for now, which means functionality over form in every aspect.</p>
+<ul>
+<li>No skinning UI elements</li>
+<li>No adding images or other visual flourishes</li>
+<li>Implementing layouts is okay as long as they use the default Flex skins</li>
+</ul>
+<p>As far as RPGs go, I've always liked Bioware's Dragon Age: Origins and it's likely going to be my biggest influence here other than Krin's Sonny. I like Bioware's emphasis on a story-focused game with player choices driving the narrative.</p>
+<p>Dragon Age's save system has several has functions:</p>
+<ol>
+<li>Start a new character</li>
+<li>Select a character to load an existing game from</li>
+<li>Load an existing game from a list of saves</li>
+<li>Delete an existing game from a list of saves</li>
+<li>Delete a character</li>
+</ol>
+<figure class="post__image" ><img loading="lazy" src="https://olinkirk.land/media/posts/31/73075698-29dc3c00-3ec5-11ea-8908-10e5309d1767-2.png" sizes="(max-width: 48em) 100vw, 100vw" srcset="https://olinkirk.land/media/posts/31/responsive/73075698-29dc3c00-3ec5-11ea-8908-10e5309d1767-2-xs.png 300w ,https://olinkirk.land/media/posts/31/responsive/73075698-29dc3c00-3ec5-11ea-8908-10e5309d1767-2-sm.png 480w ,https://olinkirk.land/media/posts/31/responsive/73075698-29dc3c00-3ec5-11ea-8908-10e5309d1767-2-md.png 768w"  alt="" width="1920" height="1080">
+<figcaption >Dragon Age: Origin's "Load Game" menu, accessible from the main menu</figcaption>
+</figure>
+<p>Once in the game, auto-saves, quick-saves, manual saves, and chapter saves take place and are organized under the current character.</p>
+<p>I implemented this system pretty quickly, with saves existing in a straightforward folder structure using character names. Everything so far works pretty smoothly which is nice. The game-state serializes/deserializes to json, and saves are sorted by their creation date.</p>
+<p>I still want to add some of the details like time played, location, or a screenshot. I really like how Bioware displays your "story so far" to indicate progress - it's a lot more interesting than a "39% complete" indicator you see more often. Overall, I'm happy with what I have so far and think I'm ready to start piecing together other parts of my game.</p>
+<div class="gallery-wrapper"><div class="gallery"  data-is-empty="false" data-columns="3">
+<figure class="gallery__item"><a href="https://olinkirk.land/media/posts/31/gallery/adl_2021-09-04_00-00-06.png" data-size="960x720"><img loading="lazy" src="https://olinkirk.land/media/posts/31/gallery/adl_2021-09-04_00-00-06-thumbnail.png" alt="" width="768" height="576"></a></figure>
+<figure class="gallery__item"><a href="https://olinkirk.land/media/posts/31/gallery/adl_2021-09-04_00-01-28.png" data-size="960x720"><img loading="lazy" src="https://olinkirk.land/media/posts/31/gallery/adl_2021-09-04_00-01-28-thumbnail.png" alt="" width="768" height="576"></a></figure>
+<figure class="gallery__item"><a href="https://olinkirk.land/media/posts/31/gallery/adl_2021-09-04_00-01-37.png" data-size="960x720"><img loading="lazy" src="https://olinkirk.land/media/posts/31/gallery/adl_2021-09-04_00-01-37-thumbnail.png" alt="" width="768" height="576"></a></figure>
+<figure class="gallery__item"><a href="https://olinkirk.land/media/posts/31/gallery/adl_2021-09-04_00-01-44.png" data-size="960x720"><img loading="lazy" src="https://olinkirk.land/media/posts/31/gallery/adl_2021-09-04_00-01-44-thumbnail.png" alt="" width="768" height="576"></a></figure>
+<figure class="gallery__item"><a href="https://olinkirk.land/media/posts/31/gallery/adl_2021-09-04_00-02-07.png" data-size="960x720"><img loading="lazy" src="https://olinkirk.land/media/posts/31/gallery/adl_2021-09-04_00-02-07-thumbnail.png" alt="" width="768" height="576"></a></figure>
+</div></div>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Movie Nite</title>
         <author>
@@ -448,70 +501,6 @@
 <li><strong>Tribes: </strong>Generate tribes of people with unique languages and spawn them in different parts of the world. Flood fill them, and they will build towns on owned nodes and name regions they are familiar with.</li>
 <li><strong>Timeline Simulation</strong>: The end-point of the generator. Step through a linear a linear flow of time, generating events and moving characters and armies. Use Crusader Kings, Total War, Civilization, and other grand strategy games as a reference point.</li>
 </ol>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>(re)Planning Worldmaker</title>
-        <author>
-            <name>Olin Kirkland</name>
-        </author>
-        <link href="https://olinkirk.land/replanning-worldmaker/"/>
-        <id>https://olinkirk.land/replanning-worldmaker/</id>
-            <category term="Worldmaker"/>
-            <category term="Blog"/>
-
-        <updated>2021-07-09T16:23:44+02:00</updated>
-            <summary>
-                <![CDATA[
-                        <img src="https://olinkirk.land/media/posts/14/adl_2021-05-14_11-14-33.png" alt="" />
-                    A decent amount of work has gone into Worldmaker, and I kind of knew at the back of my head&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                    <img src="https://olinkirk.land/media/posts/14/adl_2021-05-14_11-14-33.png" alt="" />
-                <p>A decent amount of work has gone into Worldmaker, and I kind of knew at the back of my head that there would need to be a rework but I didn't expect to do it this soon.</p>
-<p>The core concept behind Worldmaker is putting the user behind the wheel of <strong>keystone decisions</strong>, called "Tasks" in the app. I realize now that I should have planned out a larger number of these before jumping into the code.</p>
-<figure class="post__image post__image--center" ><img loading="lazy" src="https://olinkirk.land/media/posts/14/chrome_2021-05-14_14-15-56.png" sizes="(max-width: 48em) 100vw, 100vw" srcset="https://olinkirk.land/media/posts/14/responsive/chrome_2021-05-14_14-15-56-xs.png 300w ,https://olinkirk.land/media/posts/14/responsive/chrome_2021-05-14_14-15-56-sm.png 480w ,https://olinkirk.land/media/posts/14/responsive/chrome_2021-05-14_14-15-56-md.png 768w"  alt="" width="461" height="430">
-<figcaption >All tasks can be viewed in one handy popup</figcaption>
-</figure>
-<p>As development progressed, I realized that it's really important that these tasks and their associated code:</p>
-<ol>
-<li>Are <strong>modular</strong></li>
-<li>Can easily have new ones added or inserted</li>
-<li>Have easy <strong>access </strong>to the state</li>
-</ol>
-<p>Unfortunately as I worked, I realized I had dug myself a pretty convoluted hole of a structure where a lot of the logic was performed within the "toolbar" - a UI element appearing on the right side of the screen, and due to the state's decidedly untyped nature, things got hard to understand fast, especially if I hadn't worked on it in a few days.</p>
-<p>The first task is more of a test case than anything. It requires the user to read a short introduction text in the toolbar, then continue to the next task.</p>
-<figure class="post__image post__image--center" ><img loading="lazy" src="https://olinkirk.land/media/posts/14/adl_2021-05-14_10-24-26.png" sizes="(max-width: 48em) 100vw, 100vw" srcset="https://olinkirk.land/media/posts/14/responsive/adl_2021-05-14_10-24-26-xs.png 300w ,https://olinkirk.land/media/posts/14/responsive/adl_2021-05-14_10-24-26-sm.png 480w ,https://olinkirk.land/media/posts/14/responsive/adl_2021-05-14_10-24-26-md.png 768w"  alt="" width="1896" height="1021">
-<figcaption >The first task</figcaption>
-</figure>
-<ul>
-<li><strong>Top Bar: </strong>Along the top of the screen, there's a pretty empty bar whose only real purpose is to hold the logo and the save button. In the future, app-level buttons will go here - to access options or screenshot functionality.</li>
-<li><strong>Layers:</strong> On the far left, there's a layers panel that is hidden by default. Map layers can be toggled and rearranged from this panel. Layers that are not available are locked.</li>
-<li><strong>The Map:</strong> In the center of the screen is the map. The map is directly changed by the state. When there's a state change event, the map redraws the affected layers.</li>
-<li><strong>The Toolbar:</strong> The toolbar is where the user can affect the current task or progress to the next task. Changing options in the toolbar affects the state.</li>
-</ul>
-<p>User flow goes something like this:</p>
-<ol>
-<li>User makes a change to toolbar</li>
-<li>State changes</li>
-<li>Map changes to reflect state change</li>
-</ol>
-<p>My big mistake was not to abstract the state, and fail to create an overall modularization of the different tasks as their own classes. Since a lot of logic takes place within the toolbar itself right now, I need to figure out how to organize the code and content so that the toolbar does no logic and only forwards the desired changes to a state controller that knows what the current task is and what classes will take over the necessary calculations.</p>
-<p>My next step will be to create a proper flow chart that can be referred to when crafting a new structure for the program.</p>
-<div class="gallery-wrapper"><div class="gallery"  data-is-empty="false" data-columns="3">
-<figure class="gallery__item"><a href="https://olinkirk.land/media/posts/14/gallery/adl_2021-05-14_11-05-26.png" data-size="1896x1021"><img loading="lazy" src="https://olinkirk.land/media/posts/14/gallery/adl_2021-05-14_11-05-26-thumbnail.png" alt="" width="768" height="414"></a>
-<figcaption>Poisson Points</figcaption>
-</figure>
-<figure class="gallery__item"><a href="https://olinkirk.land/media/posts/14/gallery/adl_2021-05-14_11-06-08.png" data-size="1896x1021"><img loading="lazy" src="https://olinkirk.land/media/posts/14/gallery/adl_2021-05-14_11-06-08-thumbnail.png" alt="" width="768" height="414"></a>
-<figcaption>Hexagon Points</figcaption>
-</figure>
-<figure class="gallery__item"><a href="https://olinkirk.land/media/posts/14/gallery/adl_2021-05-14_11-05-59.png" data-size="1896x1021"><img loading="lazy" src="https://olinkirk.land/media/posts/14/gallery/adl_2021-05-14_11-05-59-thumbnail.png" alt="" width="768" height="414"></a>
-<figcaption>Square Points</figcaption>
-</figure>
-</div></div>
             ]]>
         </content>
     </entry>
