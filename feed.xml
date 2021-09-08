@@ -3,7 +3,7 @@
     <title>Olin Kirkland</title>
     <link href="https://olinkirk.land/feed.xml" rel="self" />
     <link href="https://olinkirk.land" />
-    <updated>2021-09-06T17:08:09+02:00</updated>
+    <updated>2021-09-08T23:35:57+02:00</updated>
     <author>
         <name>Olin Kirkland</name>
     </author>
@@ -154,11 +154,11 @@
         <author>
             <name>Olin Kirkland</name>
         </author>
-        <link href="https://olinkirk.land/worlds-or-more-procedurally-generated-adventures/"/>
-        <id>https://olinkirk.land/worlds-or-more-procedurally-generated-adventures/</id>
+        <link href="https://olinkirk.land/worlds/"/>
+        <id>https://olinkirk.land/worlds/</id>
             <category term="Projects"/>
 
-        <updated>2021-07-09T16:41:01+02:00</updated>
+        <updated>2021-09-08T23:35:57+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://olinkirk.land/media/posts/22/adl_2021-07-09_15-47-23.png" alt="" />
@@ -362,11 +362,11 @@
         <author>
             <name>Olin Kirkland</name>
         </author>
-        <link href="https://olinkirk.land/omg-or-exploring-making-a-social-network/"/>
-        <id>https://olinkirk.land/omg-or-exploring-making-a-social-network/</id>
+        <link href="https://olinkirk.land/omg/"/>
+        <id>https://olinkirk.land/omg/</id>
             <category term="Projects"/>
 
-        <updated>2021-07-09T16:15:46+02:00</updated>
+        <updated>2021-09-08T23:35:43+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://olinkirk.land/media/posts/23/flashplayer_32_sa_debug_2020-07-19_18-13-53.png" alt="" />
