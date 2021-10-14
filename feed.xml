@@ -3,14 +3,46 @@
     <title>Olin Kirkland</title>
     <link href="https://olinkirk.land/feed.xml" rel="self" />
     <link href="https://olinkirk.land" />
-    <updated>2021-09-08T23:35:57+02:00</updated>
+    <updated>2021-10-14T20:24:12+02:00</updated>
     <author>
         <name>Olin Kirkland</name>
     </author>
     <id>https://olinkirk.land</id>
 
     <entry>
-        <title>Keeping Track of Saved Games</title>
+        <title>Saving the Game II</title>
+        <author>
+            <name>Olin Kirkland</name>
+        </author>
+        <link href="https://olinkirk.land/polaris-saved-games-2/"/>
+        <id>https://olinkirk.land/polaris-saved-games-2/</id>
+            <category term="Polaris"/>
+            <category term="Blog"/>
+
+        <updated>2021-10-14T20:24:12+02:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://olinkirk.land/media/posts/33/chrome_E5dYaavlOh.png" alt="" />
+                    Expanding on the progress from Keeping Track of Saved Games, I've finished up with the basic game-state loading/saving for Polaris.
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <img src="https://olinkirk.land/media/posts/33/chrome_E5dYaavlOh.png" alt="" />
+                <p>Expanding on the progress from <a href="https://olinkirk.land/polaris-saved-games/">Keeping Track of Saved Games</a>, I've finished up with the basic game-state loading/saving for Polaris. I added a game screen with an in-game menu that allows for quick-saves and manual saves. There's also more save information displayed on the home and loading pages.</p>
+<pre><code>{<br>  "characterName": "Morrigan,<br>  "name": "Auto-save",</code><br><code>  "time": 1634235074877</code><br><code>}</code></pre>
+<p>My next step is going to be to i<em>m</em>plement game locations (and the ability to travel to them), characters, conversations, and quest progression.</p>
+<div class="gallery-wrapper"><div class="gallery"  data-is-empty="false" data-columns="3">
+<figure class="gallery__item"><a href="https://olinkirk.land/media/posts/33/gallery/adl_2dVaQQ7FHy.png" data-size="960x720"><img loading="lazy" src="https://olinkirk.land/media/posts/33/gallery/adl_2dVaQQ7FHy-thumbnail.png" alt="" width="768" height="576"></a></figure>
+<figure class="gallery__item"><a href="https://olinkirk.land/media/posts/33/gallery/adl_JvePFnSpKk.png" data-size="960x720"><img loading="lazy" src="https://olinkirk.land/media/posts/33/gallery/adl_JvePFnSpKk-thumbnail.png" alt="" width="768" height="576"></a></figure>
+<figure class="gallery__item"><a href="https://olinkirk.land/media/posts/33/gallery/adl_v3um2xJJKz.png" data-size="960x720"><img loading="lazy" src="https://olinkirk.land/media/posts/33/gallery/adl_v3um2xJJKz-thumbnail.png" alt="" width="768" height="576"></a></figure>
+<figure class="gallery__item"><a href="https://olinkirk.land/media/posts/33/gallery/adl_muU5iG73Ln.png" data-size="960x720"><img loading="lazy" src="https://olinkirk.land/media/posts/33/gallery/adl_muU5iG73Ln-thumbnail.png" alt="" width="768" height="576"></a></figure>
+</div></div>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Saving the Game</title>
         <author>
             <name>Olin Kirkland</name>
         </author>
@@ -19,7 +51,7 @@
             <category term="Polaris"/>
             <category term="Blog"/>
 
-        <updated>2021-09-06T17:08:09+02:00</updated>
+        <updated>2021-10-14T20:21:51+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://olinkirk.land/media/posts/31/glacier-aurora-aurora-borealis-night.jpg" alt="" />
@@ -462,45 +494,6 @@
 <figcaption >Different events act upon the task</figcaption>
 </figure>
 <p>Different events (in the game console metaphor, controllers) will act on the task. It's important for each task therefore to have a function to handle any of these events. Creating an abstract Task class to inherit the other task classes from helps keep this organized.</p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>Defining Keystone Decisions</title>
-        <author>
-            <name>Olin Kirkland</name>
-        </author>
-        <link href="https://olinkirk.land/defining-keystone-decisions/"/>
-        <id>https://olinkirk.land/defining-keystone-decisions/</id>
-            <category term="Worldmaker"/>
-            <category term="Blog"/>
-
-        <updated>2021-07-09T16:23:09+02:00</updated>
-            <summary>
-                <![CDATA[
-                        <img src="https://olinkirk.land/media/posts/15/L-Karniesbogen_keystone.png" alt="" />
-                    My Worldmaker app centers around keystone decisions defined by the user. Each decision is a step toward generating a cool&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                    <img src="https://olinkirk.land/media/posts/15/L-Karniesbogen_keystone.png" alt="" />
-                <p>My Worldmaker app centers around keystone decisions defined by the user. Each decision is a step toward generating a cool fantasy world that can be used for game development or Dungeons &amp; Dragons-style worldbuilding. Each keystone decision has its own class that handles all calculations and updates the state directly. This is the first draft.</p>
-<ol>
-<li><strong>Points: </strong>Determine the map points and generate the voronoi graph. The world has to be generated on a base that can be referenced and manipulated by the code. This will provide cells - the basic building blocks of the map.</li>
-<li><strong>Tectonics:</strong> Make the tectonic plates. Plates are generated by a simple flood-fill algorithm. Tectonic plates have several properties that the user may define: Origin cell, strength, random-ness, color, bend type (convex or concave), bend strength, elevation, and direction.</li>
-<li><strong>Terrain: </strong>Terrain is generated using <a href="https://www.nationalgeographic.com/science/article/plate-tectonics" target="_blank" rel="noopener noreferrer">tectonic plate boundary rules</a>. Sea level, terrain randomness and coastal erosion are also set here.</li>
-<li><strong>Islands: </strong>Because islands are kind of ignored by my tectonics and terrain generation algorithms, I think it's appropriate to add them in their own step. Island clusters can be a unique tectonic cell type and are <a href="https://www.worldatlas.com/articles/how-many-types-of-islands-are-there.html" target="_blank" rel="noopener noreferrer">generated for special cases</a>.</li>
-<li><strong>Temperature: </strong>Poles are cold, equator is warm. Let users define the temperature gradient and equator.</li>
-<li><strong>Wind: </strong>This one's going to be difficult, but essentially determine which direction wind flows, globally. Atmospheric pressure simulation? <a href="https://media.springernature.com/lw785/springer-static/image/prt%3A978-0-387-30749-7%2F19/MediaObjects/978-0-387-30749-7_19_Part_Fig21_HTML.jpg" target="_blank" rel="noopener noreferrer">Hmm.</a></li>
-<li><strong>Moisture:</strong> Wind and temperature defines how much water wind picks up from the ocean and dumped on land.</li>
-<li><strong>Rivers</strong>: Use moisture values to determine where rivers flow to the sea.</li>
-<li><strong>Biomes: </strong>Use rainfall and temperature to determine biomes.</li>
-<li><strong>Flora &amp; Fauna: </strong>Generate flora and fauna from a list of plants and animals. Users can define what flora &amp; fauna are allowed/disallowed from the source list.</li>
-<li><strong>Regions: </strong>Generate initial nodes where towns can spawn, and the regions around them. Each node defines the desirability and resources of the possible town. Think of regions as simply the area around a town.</li>
-<li><strong>Tribes: </strong>Generate tribes of people with unique languages and spawn them in different parts of the world. Flood fill them, and they will build towns on owned nodes and name regions they are familiar with.</li>
-<li><strong>Timeline Simulation</strong>: The end-point of the generator. Step through a linear a linear flow of time, generating events and moving characters and armies. Use Crusader Kings, Total War, Civilization, and other grand strategy games as a reference point.</li>
-</ol>
             ]]>
         </content>
     </entry>
